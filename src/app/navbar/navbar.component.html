@@ -1,0 +1,47 @@
+<nav id="topNav">
+    <div id="navDivName">
+        <a routerLink="">
+            <span id="NavSpanforeName">A.</span>
+            <span id="NavSpanName">MANSSON</span>
+        </a>
+    </div>
+    <div class="hamburgerContainer">
+        <div class="hamburger" (click)= "toggleMenu()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+</nav>
+<div id="navMenuContainer" (click) = "isToggled" [@test] = "isToggled">   
+    <div class="NavMenuHamburgerContainer">
+        <div class="NavMenuhamburger" (click)= "toggleMenu()">
+            <div class="cross1"></div>
+            <div class="cross2"></div>
+        </div>
+    </div>
+    <nav class="navMenu">
+        <ul>
+            <li><a (click)= "toggleMenu()" routerLink="" routerLinkActive="is-active" class="NavLink"
+                    [routerLinkActiveOptions]="{ exact: true }">HOME
+                </a>
+            </li>
+            <li>
+                <a (click)= "toggleMenu()" routerLink="portfolio" routerLinkActive="is-active" class="NavLink">PORTFOLIO
+                </a>
+            </li>
+            <li>
+                <a (click)= "toggleMenu()" routerLink="features" routerLinkActive="is-active" class="NavLink">FEATURES
+                </a>
+            </li>
+            <li>
+                <a (click)= "toggleMenu()" routerLink="kyoto" routerLinkActive="is-active" class="NavLinkSub">KYOTO
+                </a>
+            </li>
+            <li>
+                <a (click)= "toggleMenu()" routerLink="about" routerLinkActive="is-active" class="NavLink">ABOUT
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
