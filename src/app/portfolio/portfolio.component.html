@@ -1,11 +1,13 @@
 <div id="masonry" @animation>
   <ngx-masonry [options]="myOptions">
-    <div ngxMasonryItem class="masonry-item" *ngFor="let item of photoUrls">
+    <div ngxMasonryItem class="masonry-item" *ngFor="let item of viewPhotoUrls">
     <!-- <div id="img-wrap"> -->
         <img [src]=item alt="..." (load)="onImageLoad($event)">
           <!-- <a id="img-link" target="_blank" [href]=item></a> -->
       <!-- </div>  -->
     </div>  
   </ngx-masonry>
-  <span>- View More -</span>
+  <div class="ViewMoreContainer">
+  <span class="ViewMoreButton" (click) = "loadMorePhotos()">Show more</span>
+</div>
 </div>
