@@ -16,9 +16,24 @@ import { PhotoService } from '../photo.service';
   ]
 })
 export class HomeComponent implements OnInit {
-  public slides = [
+  // public slides = [
+  // ];
+  slides: string[] = [
+//     "../assets/Pictures/Kyoto.jpg",
+//   "../assets/Pictures/niseko.jpg",
+// "../assets/Pictures/Malmö.jpg",
+// "../assets/Pictures/DSC00476.jpg",
+// "../assets/Pictures/Malmö.jpg",
+// "../assets/Pictures/DSC00476.jpg",
+// "../assets/Pictures/Malmö.jpg",
+// "../assets/Pictures/DSC00476.jpg",
+// "../assets/Pictures/Kyoto.jpg",
+//   "../assets/Pictures/niseko.jpg",
+// "../assets/Pictures/Malmö.jpg",
+// "../assets/Pictures/Kyoto.jpg",
+  "../assets/Pictures/niseko.jpg",
+// "../assets/Pictures/Malmö.jpg",
   ];
-  photoUrls: string[] = [];
   images = [];
   constructor(
     private photoService: PhotoService
