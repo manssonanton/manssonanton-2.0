@@ -42,7 +42,7 @@ export class CarouselComponent implements OnInit, AfterViewInit {
 
   preloadImages() {
     for (const slide of this.slides) {
-      new Image().src = slide.src;
+      new Image().src = slide;
     }
   }
 }

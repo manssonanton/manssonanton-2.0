@@ -1,5 +1,5 @@
 .flex-container {
-    margin-top: 9%;
+    margin-top: 10%;
   }
   .article{
     display: flex;
@@ -27,14 +27,16 @@
     max-width: 40%;
   }
   .flex-img{
-    max-width: 70%;
+    max-width: 100%;
   }
   h1{
     font-family: 'Montserrat', sans-serif;
       font-weight: 600;
       font-size: 5rem;
       margin:0;
-    margin-bottom: 0.5em;
+  }
+  hr{
+      width: 200px;
   }
 .art-header-light{
   font-family: 'Montserrat', sans-serif;
@@ -55,24 +57,19 @@ margin: 0;
     list-style-type: none;
     padding-left: 0;
   }
-  .article-text{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 200;
-    font-size: 16px;
-    width: 80%;
-  }
-  .card-text{
-    // font-family: 'Montserrat', sans-serif;
-font-family: 'Open Sans', sans-serif;
-// font-family: 'Titillium Web', sans-serif;
-    font-style: italic;
-    font-size: 15px;
-    margin: 10%;
-    width: 80%;
-  }
-  p{
-    display: block;
-    width: 100%;
+  .home-button{
+    display: inline-block;
+    margin-top: 2%;
+    width: 120px;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #131313;
+    border: solid 3px #131313;
+    background-color: transparent;
+    text-decoration: none;
+    padding: 0.8em;
+    transition: 0.2s ease-in-out;
   }
   @media screen and (max-width: 500px) {
     .flex-container {

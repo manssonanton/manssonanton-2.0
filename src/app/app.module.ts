@@ -17,6 +17,10 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { KyotoComponent } from './kyoto/kyoto.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { OsakaComponent } from './osaka/osaka.component';
+import { MalmoComponent } from './malmo/malmo.component';
+import { FeaturesComponent } from './features/features.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export class HammerConfig extends HammerGestureConfig { // Needed to enable vertical scroll for some reason
   overrides = <any>{
@@ -35,6 +39,10 @@ export class HammerConfig extends HammerGestureConfig { // Needed to enable vert
     FooterComponent,
     KyotoComponent,
     CarouselComponent,
+    OsakaComponent,
+    MalmoComponent,
+    FeaturesComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

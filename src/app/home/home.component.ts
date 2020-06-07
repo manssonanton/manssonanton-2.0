@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { scaleIn, scaleOut } from '../carousel.animations';
+import { PhotoService } from '../photo.service';
 
 @Component({
   selector: 'app-home',
@@ -9,19 +10,30 @@ import { scaleIn, scaleOut } from '../carousel.animations';
   animations: [
     trigger("slideAnimation", [
       /* scale */
-      transition("void => *", [useAnimation(scaleIn, {params: { time: '500ms' }} )]),
-      transition("* => void", [useAnimation(scaleOut, {params: { time: '500ms' }})]),
+      transition("void => *", [useAnimation(scaleIn, { params: { time: '500ms' } })]),
+      transition("* => void", [useAnimation(scaleOut, { params: { time: '500ms' } })]),
     ])
   ]
 })
 export class HomeComponent implements OnInit {
   public slides = [
-    { src: "../assets/Pictures/Kyoto.jpg" },
-    { src: "../assets/Pictures/niseko.jpg" }
   ];
-  constructor() { }
+  photoUrls: string[] = [];
+  images = [];
+  constructor(
+    private photoService: PhotoService
+  ) { }
 
   ngOnInit(): void {
+    this.getHomePhotos()
   }
 
+
+ getHomePhotos() {
+    this.photoService.getHomePhotos()
+      .subscribe(res => {
+        this.slides = this.slides.concat((res as any).PhotoData.map(p => "https://manssonanton.com/pictures/home/" + p.Url));
+        this.slides.splice(-1, 1)
+      })
+  }
 }
