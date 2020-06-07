@@ -16,9 +16,9 @@ import { PhotoService } from '../photo.service';
   ]
 })
 export class HomeComponent implements OnInit {
-  // public slides = [
-  // ];
-  slides: string[] = [
+  public slides = [
+  ];
+  // slides: string[] = [
 //     "../assets/Pictures/Kyoto.jpg",
 //   "../assets/Pictures/niseko.jpg",
 // "../assets/Pictures/Malmö.jpg",
@@ -31,10 +31,9 @@ export class HomeComponent implements OnInit {
 //   "../assets/Pictures/niseko.jpg",
 // "../assets/Pictures/Malmö.jpg",
 // "../assets/Pictures/Kyoto.jpg",
-  "../assets/Pictures/niseko.jpg",
+  // "../assets/Pictures/niseko.jpg",
 // "../assets/Pictures/Malmö.jpg",
-  ];
-  images = [];
+  // ];
   constructor(
     private photoService: PhotoService
   ) { }

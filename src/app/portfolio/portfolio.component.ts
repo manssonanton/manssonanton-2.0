@@ -18,13 +18,13 @@ import { scaleIn, scaleOut } from '../carousel.animations';
 export class PortfolioComponent implements OnInit, AfterViewInit {
   @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
   myOptions: NgxMasonryOptions = {
-    horizontalOrder: true,
+    // horizontalOrder: true,
     gutter: 19,
     // percentPosition: true,
     resize: true,
     initLayout: true,
     fitWidth: true,
-    originTop: true
+    // originTop: true
   };
   // query: any = <any>{};
   page: number = 0;
