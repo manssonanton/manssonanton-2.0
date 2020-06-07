@@ -35,7 +35,27 @@ img:hover {
   cursor: pointer;
   filter: grayscale(100%);
 }
+.ViewMoreButton{
+font-size: 1rem;
+font-family: 'Montserrat', sans-serif;
+color: #131313;
+border: solid 2px #f8f8f8;
+background-color: #fdfdfd;
+text-decoration: none;
+padding: 0.8em;
+transition: 0.2s ease-in-out;
+border-radius: 2em;
+}
+.ViewMoreContainer{
+text-align: center;
+padding-top: 2em;
+padding-bottom: 2em;
+}
 
+
+.ViewMoreButton:hover{
+  cursor: pointer;
+}
 @media screen and (max-width: 500px) {
   #masonry {
     margin-left: 0em;
@@ -53,6 +73,22 @@ img:hover {
       display: inline-block;
     }
   }
+
+  .ViewMoreButton{
+    font-size: 1rem;
+    padding: 0.5em;
+    border-radius: 2em;
+    }
+    .ViewMoreContainer{
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    }
+    
+    
+    .ViewMoreButton:hover{
+      cursor: pointer;
+    }
 }
 
 // @media screen and (min-width: 1921px) {
