@@ -51,12 +51,9 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     private photoService: PhotoService
   ) { }
   ngAfterViewInit() {
-    //     this.masonry.reloadItems();
-    // this.masonry.layout();
   }
   ngOnInit() {
     this.requestPhotos();
-    // this.preloadImages()
   }
   // getPhotos() {
   //   this.photoService.randomPhotos(1)

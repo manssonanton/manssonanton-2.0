@@ -57,6 +57,10 @@ padding-bottom: 2em;
   cursor: pointer;
 }
 @media screen and (max-width: 500px) {
+  img:hover {
+    cursor: none;
+    filter: none;
+  }
   #masonry {
     margin-left: 0em;
     margin-right: 0em;
@@ -72,6 +76,11 @@ padding-bottom: 2em;
       height: auto;
       display: inline-block;
     }
+  }
+  .masonry-item-wide {
+    height: auto;
+     width: 100%;
+    margin-bottom: 0px;
   }
 
   .ViewMoreButton{
