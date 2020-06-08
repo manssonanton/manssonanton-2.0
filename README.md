@@ -1,4 +1,5 @@
-Personal Web Page
+# Personal Web Page
+
 This is the repository for my personal webpage found on https://manssonanton.com
 
 It is built on Angular 9 with some PhP code in the backend to give the pictures from the DB.
