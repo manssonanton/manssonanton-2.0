@@ -1,33 +1,53 @@
-<nav id="topNav">
-    <div id="navDivName">
-        <a routerLink="">
-            <span id="NavSpanforeName">A.</span>
-            <span id="NavSpanName">MANSSON</span>
-        </a>
-    </div>
-    <div class="hamburgerContainer">
-        <div class="hamburger" (click)= "toggleMenu()">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+<section class="main-navigation">
+    <nav id="topNav">
+        <div id="navDivName">
+            <a routerLink="">
+                <span id="NavSpanforeName">ANTON </span>
+                <span id="NavSpanName">MANSSON°</span>
+            </a>
+        </div>
+        <div class="hamburgerContainer">
+            <div class="hamburger" (click)="toggleMenu()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+    </nav>
+</section>
+
+<section class="right-navigation">
+    <div id="rightNav">
+        <div class="bottom-right">
+            <i ><svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 17 10" ><path class="cls-1" d="M6.22,8.75,3.37,5.89H17V4.12H3.37L6.22,1.25,5,0,0,5l5,5Z"></path></svg></i>
+             <span class="arrow-txt">TOP</span>
         </div>
     </div>
-</nav>
-<div id="navMenuContainer" (click) = "isToggled" [@test] = "isToggled">   
+</section>
+
+<section class="left-navigation">
+    <div id="leftNav">
+        <div class="bottom-left">
+            <i ><svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 17 10" class="arrow-down"><path class="cls-1" d="M6.22,8.75,3.37,5.89H17V4.12H3.37L6.22,1.25,5,0,0,5l5,5Z"></path></svg></i>
+             <span class="arrow-txt">SCROLL</span>
+        </div>
+    </div>
+</section>
+<div id="navMenuContainer" (click)="isToggled" [@test]="isToggled">
     <div class="NavMenuHamburgerContainer">
-        <div class="NavMenuhamburger" (click)= "toggleMenu()">
+        <div class="NavMenuhamburger" (click)="toggleMenu()">
             <div class="cross1"></div>
             <div class="cross2"></div>
         </div>
     </div>
     <nav class="navMenu">
         <ul>
-            <li><a (click)= "toggleMenu()" routerLink="" routerLinkActive="is-active" class="NavLink"
+            <li><a (click)="toggleMenu()" routerLink="" routerLinkActive="is-active" class="NavLink"
                     [routerLinkActiveOptions]="{ exact: true }">HOME
                 </a>
             </li>
             <li>
-                <a (click)= "toggleMenu()" routerLink="portfolio" routerLinkActive="is-active" class="NavLink">PORTFOLIO
+                <a (click)="toggleMenu()" routerLink="portfolio" routerLinkActive="is-active" class="NavLink">PORTFOLIO
                 </a>
             </li>
             <li>
@@ -37,11 +57,12 @@
                 </a>
             </li>
             <li>
-                <a (click)= "toggleMenu()" routerLink="features/kyoto" routerLinkActive="is-active" class="NavLinkSub">KYOTO
+                <a (click)="toggleMenu()" routerLink="features/kyoto" routerLinkActive="is-active"
+                    class="NavLinkSub">KYOTO
                 </a>
             </li>
             <li>
-                <a (click)= "toggleMenu()" routerLink="about" routerLinkActive="is-active" class="NavLink">ABOUT
+                <a (click)="toggleMenu()" routerLink="about" routerLinkActive="is-active" class="NavLink">ABOUT
                 </a>
             </li>
         </ul>

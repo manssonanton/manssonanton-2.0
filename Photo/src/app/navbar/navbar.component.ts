@@ -1,6 +1,12 @@
 import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
 import { useAnimation, trigger, transition, state, style, animate } from '@angular/animations';
 import { scaleIn, scaleOut } from '../carousel.animations';
+import {
+  CSSPlugin,
+  TweenMax,
+  TimelineMax,
+  Linear
+} from "gsap/all";
 
 @Component({
   selector: 'app-navbar',
@@ -18,23 +24,38 @@ import { scaleIn, scaleOut } from '../carousel.animations';
 })
 export class NavbarComponent implements OnInit {
   // @HostListener('window:scroll', ['$event']) // for window scroll events
-  // @ViewChild('topNav') topNav: HTMLElement;
+  // @ViewChild('NavLink') NavLink: HTMLElement;
   prevScrollpos = window.pageYOffset;
   isToggled: Boolean;
 
-  constructor() { }
+
+  constructor(
+
+  ) { }
 
   ngOnInit(): void {
+
     this.toggleMenu();
   }
 
   toggleMenu(){
-    console.log(this.isToggled);  
     this.isToggled = !this.isToggled;
+    const tl = new TimelineMax({delay: 0.5});
+    if (!this.isToggled){
+      var targetObject = document.getElementsByClassName('NavLink');
+      Array.from(targetObject).forEach((el) => {
+        tl.fromTo(el, 0.25, { opacity:"0" },
+        { opacity:"1" });
+        tl.play();
+    });
+
+    }
+    else{
+
+    }
   }
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event){
-    console.log("scrolling");
     let navBar = document.getElementById("topNav") as HTMLElement;
     var currentScrollPos = window.pageYOffset;
     if (this.prevScrollpos > currentScrollPos) {

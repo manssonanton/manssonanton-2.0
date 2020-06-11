@@ -1,22 +1,22 @@
 .home-container{
-  margin-top: 7%;
+  margin-top: 4%;
   display: flex;
   width: 100%;
-
+  display: table;
+  height: 100%;
   .home-button{
     display: inline-block;
     margin-top: 6%;
-    width: 120px;
     font-size: 1.2rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     color: #3a3a3a;
-    border: solid 3px #fafafa;
-    background-color: #fafafa;
+    border: solid 2px #3a3a3a;
     text-decoration: none;
-    padding: 0.8em;
+    padding: 1em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
     transition: 0.1s ease-in-out;
-    border-radius: 2em;
   }
 
   .home-button:hover{
@@ -27,49 +27,51 @@
   }
 }
 .home-flex{
-  width: 40%;
-  margin-top: 11%;
+  display:table-cell;
+ vertical-align:middle;
+  width: 30%;
   text-align: center;
   align-items: center;
   align-content: center;
   margin-left: 7%;
 }
 .carousel-flex{
-  width: 60%;
+  width: 100%;
 }
 .container {
-  height: 675px;
-  max-width: 900px;
-  padding: 2em;
+  // height: 675px;
+  max-width: 85%;
+  // padding: 2em;
+  // padding-bottom: 75%;
 }
 h1{
   font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
-    font-size: 2.5rem;
+    font-weight: 800;
+    font-size: 1.8rem;
     color: #131313;
     margin: 0;
 }
 h2{
   font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 2.5rem;
+    font-weight: 200;
+    font-size: 1.8rem;
     color: #131313;
     margin: 0.3rem; 
 }
 
 @media screen and (min-width: 1930px) {
   h1{
-      font-size: 3rem;
+      font-size: 2rem;
   }
   h2{
-      font-size: 3rem;
+      font-size: 2rem;
   }
 
-  .container {
-    height: 900px;
-    max-width: 1200px;
-    padding: 2em;
-  }
+  // .container {
+  //   height: 900px;
+  //   max-width: 1200px;
+  //   padding: 2em;
+  // }
 }
 
 @media screen and (max-width: 500px) {
@@ -80,7 +82,6 @@ h2{
     .home-button{
       display: inline-block;
       margin-top: 6%;
-      width: 100px;
       font-size: 1rem;
       border: solid 2px #131313;
       padding: 0.8em;
@@ -99,16 +100,15 @@ h2{
     padding-left: 0;
     padding-right: 0;
     margin-top: 1em;
-    height: 400px;
-    width: 100%;
+    max-width: 100%;
   }
   h1{
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       margin-left: 2em;
       margin-right: 2em;
   }
   h2{
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       color: #131313;
       margin: 0.3rem; 
       margin-left: 2em;
