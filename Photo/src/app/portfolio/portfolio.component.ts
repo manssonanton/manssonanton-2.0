@@ -9,13 +9,12 @@ import { scaleIn, scaleOut } from '../carousel.animations';
   styleUrls: ['./portfolio.component.scss'],
   animations: [
     trigger("animation", [
-      /* scale */
       transition("void => *", [useAnimation(scaleIn, { params: { time: '700ms' } })]),
       transition("* => void", [useAnimation(scaleOut, { params: { time: '500ms' } })]),
     ])
   ]
 })
-export class PortfolioComponent implements OnInit, AfterViewInit {
+export class PortfolioComponent implements OnInit {
   @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
   myOptions: NgxMasonryOptions = {
     // horizontalOrder: true,
@@ -29,20 +28,13 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   // query: any = <any>{};
   page: number = 0;
   // photoUrls: string[] = [
-  //   "../assets/Pictures/Kyoto.jpg",
   //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/Malmö.jpg",
-  //   "../assets/Pictures/DSC00476.jpg",
-  //   "../assets/Pictures/Malmö.jpg",
-  //   "../assets/Pictures/DSC00476.jpg",
-  //   "../assets/Pictures/Malmö.jpg",
-  //   "../assets/Pictures/DSC00476.jpg",
-  //   "../assets/Pictures/Kyoto.jpg",
   //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/Malmö.jpg",
-  //   "../assets/Pictures/Kyoto.jpg",
   //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/Malmö.jpg",
+  //   "../assets/Pictures/niseko.jpg",
+  //   "../assets/Pictures/niseko.jpg",
+  //   "../assets/Pictures/niseko.jpg",
+  //   "../assets/Pictures/niseko.jpg",
   // ];
   viewPhotoUrls: string[] = [];
   photoUrls: string[] = [];
@@ -50,24 +42,11 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   constructor(
     private photoService: PhotoService
   ) { }
-  ngAfterViewInit() {
-  }
+
   ngOnInit() {
     this.requestPhotos();
   }
-  // getPhotos() {
-  //   this.photoService.randomPhotos(1)
-  //     .subscribe(res => {
-  //       this.photoUrls = (res as any).photos.map(p => p.src.original);
-  //     });
-  // }
 
-  // requestSearchPhotos() {
-  //   this.photoService.searchPhotos(this.query.search, this.page)
-  //     .subscribe(res => {
-  //       this.photoUrls = this.photoUrls.concat((res as any).photos.map(p => p.src.original));
-  //     })
-  // }
 
   requestPhotos() {
     this.photoService.getPhotos()
@@ -77,19 +56,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
         this.loadMorePhotos()   // Load the first 15 images to view
       })
   }
-  // loadImages(): void {
-  //   this.photoService.fetchImages()
-  //     .subscribe(images => this.photoUrls = images);
-  //     this.preloadImages()
-  // }
 
-  // preloadImages() {
-  //   for (const slide of this.photoUrls) {
-  //     var imageSize = new Image().src = slide;
-  //     imageSize.onload = function() { callback(this.width, this.height); }
-  //     console.log(imageSize);
-  //   }
-  // }
 
   onImageLoad(evt) {
     if (evt && evt.target) {
@@ -98,23 +65,11 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
       const width = evt.srcElement.width;
       const height = evt.srcElement.height;
       var portrait = height > width ? true : false;
-      // console.log('Loaded: ', width, height, 'portrait: ', portrait);
       if (portrait === false) {
         evt.target.parentElement.className = "masonry-item-wide"
-        // console.log("masonry-item-wide");
       }
     }
   }
-  // onScroll() {
-  //   this.page++
-  //   if (!this.query.search) {
-  //     // this.getPhotos();
-  //     // console.log("getphotos")
-  //   }
-  //   else {
-  //     // this.requestSearchPhotos();
-  //   }
-  // }
 
   loadMorePhotos() {
     this.page++
@@ -131,6 +86,43 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
         this.viewPhotoUrls[i] = this.photoUrls[i]
         }
       }
-    // }
   }
 }
+
+
+  // loadImages(): void {
+  //   this.photoService.fetchImages()
+  //     .subscribe(images => this.photoUrls = images);
+  //     this.preloadImages()
+  // }
+
+  // preloadImages() {
+  //   for (const slide of this.photoUrls) {
+  //     var imageSize = new Image().src = slide;
+  //     imageSize.onload = function() { callback(this.width, this.height); }
+  //     console.log(imageSize);
+  //   }
+  // }
+  // onScroll() {
+  //   this.page++
+  //   if (!this.query.search) {
+  //     // this.getPhotos();
+  //     // console.log("getphotos")
+  //   }
+  //   else {
+  //     // this.requestSearchPhotos();
+  //   }
+  // }
+  // getPhotos() {
+  //   this.photoService.randomPhotos(1)
+  //     .subscribe(res => {
+  //       this.photoUrls = (res as any).photos.map(p => p.src.original);
+  //     });
+  // }
+
+  // requestSearchPhotos() {
+  //   this.photoService.searchPhotos(this.query.search, this.page)
+  //     .subscribe(res => {
+  //       this.photoUrls = this.photoUrls.concat((res as any).photos.map(p => p.src.original));
+  //     })
+  // }

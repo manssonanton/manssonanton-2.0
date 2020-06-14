@@ -2,15 +2,15 @@
     <nav id="topNav">
         <div id="navDivName">
             <a routerLink="">
-                <span id="NavSpanforeName">ANTON </span>
+                <!-- <span id="NavSpanforeName">ANTON </span> -->
                 <span id="NavSpanName">MANSSON°</span>
             </a>
         </div>
         <div class="hamburgerContainer">
             <div class="hamburger" (click)="toggleMenu()">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
+                <div id="bar1"></div>
+                <div id="bar2"></div>
+                <div id="bar3"></div>
             </div>
         </div>
     </nav>
@@ -18,7 +18,7 @@
 
 <section class="right-navigation">
     <div id="rightNav">
-        <div class="bottom-right">
+        <div id="bottom-right" (click) = "scrollToTop()">
             <i ><svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 17 10" ><path class="cls-1" d="M6.22,8.75,3.37,5.89H17V4.12H3.37L6.22,1.25,5,0,0,5l5,5Z"></path></svg></i>
              <span class="arrow-txt">TOP</span>
         </div>
@@ -27,21 +27,22 @@
 
 <section class="left-navigation">
     <div id="leftNav">
-        <div class="bottom-left">
+        <div id="bottom-left">
             <i ><svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 17 10" class="arrow-down"><path class="cls-1" d="M6.22,8.75,3.37,5.89H17V4.12H3.37L6.22,1.25,5,0,0,5l5,5Z"></path></svg></i>
              <span class="arrow-txt">SCROLL</span>
         </div>
     </div>
 </section>
-<div id="navMenuContainer" (click)="isToggled" [@test]="isToggled">
+<div id="navMenuContainer" (click)="isToggled" >
+<!-- [@test]="isToggled"> -->
     <div class="NavMenuHamburgerContainer">
         <div class="NavMenuhamburger" (click)="toggleMenu()">
-            <div class="cross1"></div>
-            <div class="cross2"></div>
+            <div id="cross1"></div>
+            <div id="cross2"></div>
         </div>
     </div>
     <nav class="navMenu">
-        <ul>
+        <ul class="menuList">
             <li><a (click)="toggleMenu()" routerLink="" routerLinkActive="is-active" class="NavLink"
                     [routerLinkActiveOptions]="{ exact: true }">HOME
                 </a>
@@ -58,7 +59,7 @@
             </li>
             <li>
                 <a (click)="toggleMenu()" routerLink="features/kyoto" routerLinkActive="is-active"
-                    class="NavLinkSub">KYOTO
+                    class="NavLink NavLinkSub">KYOTO
                 </a>
             </li>
             <li>

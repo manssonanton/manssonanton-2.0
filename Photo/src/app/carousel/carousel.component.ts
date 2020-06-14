@@ -26,7 +26,7 @@ export class CarouselComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     setInterval(() => {
       this.onNextClick();
-    }, 4000);
+    }, 6000);
   }
   onPreviousClick() {
     const previous = this.currentSlide - 1;
