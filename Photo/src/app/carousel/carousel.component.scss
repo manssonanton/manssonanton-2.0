@@ -2,16 +2,15 @@
 // Carousel
 // =========================
 
-:host {
-    flex: 1;
-  }
+// :host {
+//     flex: 1;
+//   }
   
   .carousel {
     position: relative;
-    height: 100%;
+    padding-bottom: 75%;
     width: 100%;
     overflow: hidden;
-    // border-radius: 0.5em;
   }
   
   .slide {

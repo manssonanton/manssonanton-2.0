@@ -36,15 +36,15 @@ img:hover {
   filter: grayscale(100%);
 }
 .ViewMoreButton{
-font-size: 1rem;
+font-size: 0.7rem;
 font-family: 'Montserrat', sans-serif;
 color: #131313;
 border: solid 2px #f8f8f8;
-background-color: #fdfdfd;
+font-weight: 800;
 text-decoration: none;
 padding: 0.8em;
 transition: 0.2s ease-in-out;
-border-radius: 2em;
+border-radius: 2px;
 }
 .ViewMoreContainer{
 text-align: center;
