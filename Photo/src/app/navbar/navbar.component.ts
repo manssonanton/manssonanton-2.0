@@ -28,9 +28,9 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   // @ViewChild('NavLink') NavLink: HTMLElement;
   prevScrollpos = window.pageYOffset;
   isToggled: Boolean;
-  tl = new TimelineMax({ delay: 1, paused: true, reversed: true});
+  tl = new TimelineMax({ delay: 1, paused: true, reversed: true });
 
-  constructor() { 
+  constructor() {
     gsap.registerPlugin(TimelineMax);
   }
   ngAfterViewInit(): void {
@@ -42,39 +42,41 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     var bar2 = document.getElementById('bar2');
     var bar3 = document.getElementById('bar3');
     var navDivName = document.getElementById('navDivName');
+    var topNav = document.getElementById('topNav');
     var bottomLeft = document.getElementById('bottom-left');
     var bottomRight = document.getElementById('bottom-right');
     var menu = document.getElementById('navMenuContainer');
     var cross1 = document.getElementById('cross1');
     var cross2 = document.getElementById('cross2');
-    this.tl.fromTo(bar1, 0.2, { transform: "translate(0px, 0px)", overflow: "visible", opacity:"1"}, { transform: "translate( 0px, -300px)",overflow: "hidden", opacity:"0"})
-    this.tl.fromTo(bar2, 0.15, { transform: "translate(0px, 0px)", overflow: "visible", opacity:"1"}, { transform: "translate( 0px, -300px)",overflow: "hidden", opacity:"0"})
-    this.tl.fromTo(bar3, 0.1, { transform: "translate(0px, 0px)", overflow: "visible", opacity:"1"}, { transform: "translate( 0px, -300px)",overflow: "hidden", opacity:"0"})
-    this.tl.fromTo(navDivName, 0.5, { transform: "translate(0px, 0px)", overflow: "visible", opacity:"1"}, { transform: "translate( 0px, -300px)",overflow: "hidden", opacity:"0"}, "-=0.2")
-    this.tl.fromTo(bottomLeft, 0.3, { transform: "translate(0px, 0px) rotate(-90deg)", overflow: "visible", opacity:"1"}, { transform: "translate( 0px, 300px) rotate(-90deg)",overflow: "hidden", opacity:"0"}, "-=0.2")
-    this.tl.fromTo(bottomRight, 0.3, { transform: "translate(0px, 0px) rotate(90deg)", overflow: "hidden", opacity:"1"}, { transform: "translate( 0px, 300px) rotate(90deg)",overflow: "hidden", opacity:"0"}, "-=0.3")
-    this.tl.fromTo(menu, 0.4, { transform: "translate(0px, -100%)",  overflow: "hidden", visibility:"hidden" }, { transform: "translate(0px, 0px)",overflow: "visible", visibility:"Visible"}, "+=0")
-    this.tl.fromTo(cross1, 0.3, { opacity:"0"}, { transform: "translateY(0.043rem) rotate(134deg)", opacity:"1"} , "+=0")
-    this.tl.fromTo(cross2, 0.3, { opacity:"0"}, { transform: "translateY(-0.57rem) rotate(-134deg)", opacity:"1"})
+    this.tl.fromTo(bar1, 0.2, { transform: "translate(0px, 0px)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, -300px)", overflow: "hidden", opacity: "0" })
+    this.tl.fromTo(bar2, 0.15, { transform: "translate(0px, 0px)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, -300px)", overflow: "hidden", opacity: "0" })
+    this.tl.fromTo(bar3, 0.1, { transform: "translate(0px, 0px)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, -300px)", overflow: "hidden", opacity: "0" })
+    this.tl.fromTo(navDivName, 0.5, { transform: "translate(0px, 0px)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, -300px)", overflow: "hidden", opacity: "0" }, "-=0.2")
+    this.tl.fromTo(topNav, 0.1, { transform: "translate(0px, 0px)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, -300px)", overflow: "hidden", opacity: "0" }, "-=0.2")
+    this.tl.fromTo(bottomLeft, 0.3, { transform: "translate(0px, 0px) rotate(-90deg)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, 300px) rotate(-90deg)", overflow: "hidden", opacity: "0" }, "-=0.2")
+    this.tl.fromTo(bottomRight, 0.3, { transform: "translate(0px, 0px) rotate(90deg)", overflow: "hidden", opacity: "1" }, { transform: "translate( 0px, 300px) rotate(90deg)", overflow: "hidden", opacity: "0" }, "-=0.3")
+    this.tl.fromTo(menu, 0.4, { transform: "translate(0px, -100%)", overflow: "hidden", visibility: "hidden" }, { transform: "translate(0px, 0px)", overflow: "visible", visibility: "Visible" }, "+=0")
+    this.tl.fromTo(cross1, 0.3, { opacity: "0" }, { transform: "translateY(0.043rem) rotate(134deg)", opacity: "1" }, "+=0")
+    this.tl.fromTo(cross2, 0.3, { opacity: "0" }, { transform: "translateY(-0.57rem) rotate(-134deg)", opacity: "1" })
     Array.from(nalinks).forEach((el) => {
-      this.tl.fromTo(el, 0.1, { opacity:"0", width: "0%" },{ opacity:"1", width: "100%"});
-  });
+      this.tl.fromTo(el, 0.1, { opacity: "0", width: "0%" }, { opacity: "1", width: "100%" });
+    });
   }
 
-  toggleMenu(){
+  toggleMenu() {
     this.isToggled = !this.isToggled;
 
-    if (this.isToggled){
+    if (this.isToggled) {
       console.log("play");
-        this.tl.play();
+      this.tl.play();
     }
-    else{
+    else {
       console.log("revers");
       this.tl.reverse();
     }
   }
 
-  @HostListener('window:scroll', ['$event']) onScrollEvent($event){
+  @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
     let navBar = document.getElementById("topNav") as HTMLElement;
     var bottomRight = document.getElementById('bottom-right') as HTMLElement;
     var currentScrollPos = window.pageYOffset;
@@ -85,11 +87,11 @@ export class NavbarComponent implements OnInit, AfterViewInit {
       navBar.style.transform = "translateY(-100%)";
     }
     this.prevScrollpos = currentScrollPos;
-    if(currentScrollPos === 0){
+    if (currentScrollPos === 0) {
       bottomRight.style.visibility = "Hidden";
       bottomRight.style.opacity = "0";
     }
-    else{
+    else {
       bottomRight.style.visibility = "Visible";
       bottomRight.style.opacity = "1";
     }
@@ -98,5 +100,5 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+  }
 }

@@ -4,14 +4,16 @@
   width: 100%;
   display: table;
   height: 100%;
+
   .home-button{
     display: inline-block;
-    margin-top: 6%;
-    font-size: 1.2rem;
+    margin-top: 1%;
+    font-size: 1rem;
+    font-weight: 900;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     color: #3a3a3a;
-    border: solid 2px #3a3a3a;
+    // border: solid 2px #3a3a3a;
     text-decoration: none;
     padding: 1em;
     padding-left: 1.2em;
@@ -22,7 +24,7 @@
   .home-button:hover{
     cursor: pointer;
     transform: scale(1.05);
-    background-color: #f1f1f1;
+    background-color: #f8f8f8;
     // transform: skew(1deg, 1deg);
   }
 }
@@ -40,7 +42,7 @@
 }
 .container {
   // height: 675px;
-  max-width: 85%;
+  max-width: 80%;
   // padding: 2em;
   // padding-bottom: 75%;
 }
@@ -82,8 +84,8 @@ h2{
     .home-button{
       display: inline-block;
       margin-top: 6%;
-      font-size: 1rem;
-      border: solid 2px #131313;
+      font-size: 0.8rem;
+      // border: solid 2px #131313;
       padding: 0.8em;
     }
   }
@@ -103,12 +105,12 @@ h2{
     margin: auto;
   }
   h1{
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       margin-left: 2em;
       margin-right: 2em;
   }
   h2{
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: #131313;
       margin: 0.3rem; 
       margin-left: 2em;

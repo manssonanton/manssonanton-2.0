@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, AfterContentInit } from '@angular/core';
 import { PhotoService } from '../photo.service';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { useAnimation, trigger, transition, state, style, animate } from '@angular/animations';
@@ -14,25 +14,27 @@ import { scaleIn, scaleOut } from '../carousel.animations';
     ])
   ]
 })
-export class PortfolioComponent implements OnInit {
+export class PortfolioComponent implements OnInit, AfterViewInit {
   @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
   myOptions: NgxMasonryOptions = {
-    // horizontalOrder: true,
+    horizontalOrder: true,
     gutter: 19,
     // percentPosition: true,
     resize: true,
     initLayout: true,
     fitWidth: true,
-    // originTop: true
+    originTop: true
   };
   // query: any = <any>{};
   page: number = 0;
-  // photoUrls: string[] = [
+  // viewPhotoUrls: string[] = [
+  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
+  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
+  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
   //   "../assets/Pictures/niseko.jpg",
+  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
   //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/niseko.jpg",
+  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
   //   "../assets/Pictures/niseko.jpg",
   //   "../assets/Pictures/niseko.jpg",
   // ];
@@ -42,6 +44,10 @@ export class PortfolioComponent implements OnInit {
   constructor(
     private photoService: PhotoService
   ) { }
+  ngAfterViewInit() {
+    // this.masonry.reloadItems();
+    this.masonry.layout();
+  }
 
   ngOnInit() {
     this.requestPhotos();
@@ -74,18 +80,18 @@ export class PortfolioComponent implements OnInit {
   loadMorePhotos() {
     this.page++
     var count = this.viewPhotoUrls.length
-      for (var i = count; i < (this.page*15); i++) {
-        if(this.photoUrls[i] === undefined){  // Hide button in case we reac hthe end of the photos
-          const button = document.getElementsByClassName("ViewMoreContainer")[0];
-          if (button instanceof HTMLElement) {
-            button.style.display = "none";
-          }
-          break;
+    for (var i = count; i < (this.page * 15); i++) {
+      if (this.photoUrls[i] === undefined) {  // Hide button in case we reac hthe end of the photos
+        const button = document.getElementsByClassName("ViewMoreContainer")[0];
+        if (button instanceof HTMLElement) {
+          button.style.display = "none";
         }
-        else{
-        this.viewPhotoUrls[i] = this.photoUrls[i]
-        }
+        break;
       }
+      else {
+        this.viewPhotoUrls[i] = this.photoUrls[i]
+      }
+    }
   }
 }
 

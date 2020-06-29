@@ -25,14 +25,19 @@ export class KyotoComponent implements OnInit {
     fitWidth: true,
     originTop: true
   };
-  photoUrls: string[] = [];
+  photoUrls: string[] = [
+    "../../assets/Pictures/Kyoto/DSC03640.jpg",
+    "../../assets/Pictures/Kyoto/DSC03640.jpg",
+    "../../assets/Pictures/Kyoto/DSC03640.jpg",
+    "../../assets/Pictures/Kyoto/DSC03640.jpg",
+  ];
 
   constructor(
     private photoService: PhotoService
   ) { }
 
   ngOnInit() {
-    this.requestPhotos();
+    // this.requestPhotos();
   }
   requestPhotos() {
     this.photoService.getKyotoPhotos()
