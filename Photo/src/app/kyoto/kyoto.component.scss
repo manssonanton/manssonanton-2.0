@@ -122,43 +122,103 @@
 
 @media screen and (max-width: 500px) {
   .flex-container {
-    margin-top: 4em;
+    margin-top: 5em;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
-
-  .flex-img {
-    width: 100vw;
+  .article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  
+    .article-section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin-bottom: 5%;
+    }
   }
-  h2 {
-    font-size: 1.8rem;
+  .text-container{
+    height: 50vh;
   }
-  h3 {
-    font-size: 1.3rem;
-    font-style: italic;
-  }
-  hr {
-    width: 50%;
-  }
-
-  .article-text {
-    width: 100%;
+  .article-header {
+    .header-text {
+      font-size: 1.5rem;
+    }
+    .sub-header-text {
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 0.8rem;
+    }
+  
+    .poster-header {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      .posted{
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 900;
+        margin-right: 0.5em;
+      }
+      .poster-name {
+        float: left;
+        margin-left: 1em;
+        font-family: "Noto Sans JP", sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        font-style: italic;
+        font-weight: 200;
+      }
+      .poster-time {
+        float: right;
+        margin-right: 1em;
+        font-family: "Noto Sans JP", sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        font-style: italic;
+        font-weight: 200;
+      }
+    }
   }
   .article-flex {
+    max-width: 90%;
     margin: 1em;
+    align-items: center;
   }
-  #masonry {
-    margin-left: 0em;
-    margin-right: 0em;
-    margin-top: 1em;
+  
+  .article-flex-img {
+    max-width: 100%;
+    display: inline;
+    .flex-img {
+      width: 90%;
+    }
+    .portrait-img{
+      width: 90%;
+    }
   }
-  .masonry-item {
-    margin-bottom: 20px;
-    background-color: #f1f1f1;
-    background-size: cover;
-    width: 100vw;
+  .row {
+    flex-wrap: wrap;
+    display: flex;
+    width: 65%;
+    margin-top: 3%;
   }
-
-  .masonry-item img {
-    width: 100%;
-    height: 100%;
+  
+  .column {
+    flex: 50%;
+    padding: 19px;
+    .portrait-img{
+      width: 100%;
+    }
+  }
+  .article-text {
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 200;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    line-height: 2;
   }
 }

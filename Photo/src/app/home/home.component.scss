@@ -1,5 +1,5 @@
 .home-container{
-  margin-top: 4%;
+  margin-top: 7%;
   display: flex;
   width: 100%;
   display: table;
@@ -31,7 +31,7 @@
 .home-flex{
   display:table-cell;
  vertical-align:middle;
-  width: 30%;
+  width: 40%;
   text-align: center;
   align-items: center;
   align-content: center;
@@ -49,14 +49,14 @@
 h1{
   font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #131313;
     margin: 0;
 }
 h2{
   font-family: 'Montserrat', sans-serif;
     font-weight: 200;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #131313;
     margin: 0.3rem; 
 }
@@ -78,12 +78,12 @@ h2{
 
 @media screen and (max-width: 500px) {
   .home-container{
-    margin-top: 5em;
+    margin-top: 6em;
     display: block;
     width: 100%;
     .home-button{
       display: inline-block;
-      margin-top: 6%;
+      margin-top: 2%;
       font-size: 0.8rem;
       // border: solid 2px #131313;
       padding: 0.8em;
