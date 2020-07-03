@@ -5,6 +5,8 @@
 /integration/bazel/bazel-*
 *.log
 node_modules
+/dist/Photo
+assets
 
 # Include when developing application packages.
 pubspec.lock
