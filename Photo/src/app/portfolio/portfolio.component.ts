@@ -17,28 +17,22 @@ import { scaleIn, scaleOut } from '../carousel.animations';
 export class PortfolioComponent implements OnInit, AfterViewInit {
   @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
   myOptions: NgxMasonryOptions = {
-    horizontalOrder: true,
-    gutter: 19,
-    // percentPosition: true,
-    resize: true,
-    initLayout: true,
-    fitWidth: true,
-    originTop: true
+    percentPosition: true,
   };
   // query: any = <any>{};
   page: number = 0;
-  // viewPhotoUrls: string[] = [
-  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
-  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
-  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
-  //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
-  //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
-  //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/niseko.jpg",
-  // ];
-  viewPhotoUrls: string[] = [];
+  viewPhotoUrls: string[] = [
+    "../assets/Pictures/Kyoto/DSC03478.jpg",
+    "../assets/Pictures/Kyoto/DSC03478.jpg",
+    "../assets/Pictures/Kyoto/DSC03478.jpg",
+    "../assets/Pictures/niseko.jpg",
+    "../assets/Pictures/Kyoto/DSC03478.jpg",
+    "../assets/Pictures/niseko.jpg",
+    "../assets/Pictures/Kyoto/DSC03478.jpg",
+    "../assets/Pictures/niseko.jpg",
+    "../assets/Pictures/niseko.jpg",
+  ];
+  // viewPhotoUrls: string[] = [];
   photoUrls: string[] = [];
   images = [];
   constructor(
@@ -50,7 +44,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.requestPhotos();
+    // this.requestPhotos();
   }
 
 
@@ -72,7 +66,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
       const height = evt.srcElement.height;
       var portrait = height > width ? true : false;
       if (portrait === false) {
-        evt.target.parentElement.className = "masonry-item-wide"
+        evt.target.parentElement.className = "masonry-item masonry-item-wide"
       }
     }
   }

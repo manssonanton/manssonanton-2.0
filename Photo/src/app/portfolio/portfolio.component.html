@@ -1,11 +1,18 @@
 <div id="masonry" @animation>
-  <ngx-masonry [options]="myOptions">
+  <!-- <ngx-masonry [options]="myOptions">
+    <div class="grid-sizer"></div>
     <div ngxMasonryItem class="masonry-item" *ngFor="let item of viewPhotoUrls">
-    <!-- <div id="img-wrap"> -->
-        <img [src]=item alt="..." (load)="onImageLoad($event)">
+     <div id="img-wrap"> -->
+      <!--   <img [src]=item alt="..." (load)="onImageLoad($event)">
           <!-- <a id="img-link" target="_blank" [href]=item></a> -->
       <!-- </div>  -->
-    </div>  
+    <!-- </div>  
+  </ngx-masonry> -->
+
+  <ngx-masonry [options]="myOptions">
+    <div ngxMasonryItem class="masonry-item"  *ngFor="let item of viewPhotoUrls" >
+      <img [src]=item alt="...">
+    </div>
   </ngx-masonry>
   <div class="ViewMoreContainer">
   <span class="ViewMoreButton" (click) = "loadMorePhotos()">DISCOVER MORE</span>

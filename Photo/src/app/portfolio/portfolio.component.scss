@@ -1,34 +1,37 @@
+.grid-sizer,
 .masonry-item {
-  height: auto;
-   max-width: 500px;
-  margin-bottom: 19px;
+  // height: 100%;
+  //  max-width: 500px;
+  width: 25%;
+  margin-bottom: 0px;
 
   img {
-     width: 100%;
-    height: auto;
-    display: inline-block;
-    transition: 0.05s ease-in-out;
+    width: 100%;
+    // // height: auto;
+    // display: inline-block;
+    transition: 0.5s ease-in-out;
+    margin-bottom: -5px;
   }
 }
 
-.masonry-item-wide {
-  height: auto;
-   max-width: 1000px;
-  margin-bottom: 19px;
+// .masonry-item-wide {
+//   // height: auto;
+//   // max-width: 600px;
+//   width: 40%;
+//   // margin-bottom: 19px;
 
-  img {
-     width: 100%;
-    height: auto;
-    display: inline-block;
-    transition: 0.05s ease-in-out;
-  }
-}
+//   img {
+//      width: 100%;
+//     height: auto;
+//     display: inline-block;
+//     transition: 0.05s ease-in-out;
+//   }
+// }
 #masonry{
-  margin-top: 6%;
+  margin-top: 3.5%;
   width: 100%;
-}
-ngx-masonry{
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img:hover {
@@ -64,7 +67,8 @@ padding-bottom: 2em;
   #masonry {
     margin-left: 0em;
     margin-right: 0em;
-    margin-top: 4.5em;
+    margin-top: 4em;
+    width: 100%;
   }
   .masonry-item {
     height: auto;

@@ -1,8 +1,8 @@
 #topNav {
-  padding-top: 1%;
-  padding-bottom: 3.5%;
+  padding-top: 0.5%;
+  padding-bottom: 3%;
   // overflow: hidden;
-  height: 7%;
+  height: 5%;
   position: fixed;
   top: 0;
   width: 100%;
@@ -65,7 +65,7 @@
 }
 
 #navDivName {
-  margin-left: 5em;
+  margin-left: 4em;
   height: 3vw;
   float: left;
   align-items: center;
@@ -76,22 +76,15 @@
 
 }
 #NavSpanforeName {
-  // font-family: 'Fjalla One', sans-serif;
-  // font-family: 'Source Code Pro', monospace;
   font-family: "Montserrat", sans-serif;
-
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #131313;
 }
 #NavSpanName {
-  // font-family: 'Fjalla One', sans-serif;
-  // font-family: 'Source Code Pro', monospace;
   font-family: "Montserrat", sans-serif;
-  // font-size: 2.5vw;
   font-weight: 900;
   letter-spacing: 0.4em;
-  // font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #131313;
 }
 #navDivName a {
@@ -123,6 +116,20 @@
     display: flex;
     text-align: center;
     justify-content: center;
+
+    .routerText{
+      display: block;
+    }
+
+    // .activeCrossed{
+    //   width: 100px;
+    //   height: 13px;
+    //   position: absolute;
+    // left:50%;
+    // transform:translate(-50%, 1%);
+    // margin-top: 7px;
+    // opacity: 0.5;
+    // }
   }
   .navMenu ul {
     list-style-type: none;
@@ -130,15 +137,18 @@
   }
 
   .NavLink {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-decoration: none;
     color: #131313;
     letter-spacing: 0.3em;
     font-weight: 900;
     font-family: "Montserrat", sans-serif;
-    border-bottom: solid 1px transparent;
+    // border-bottom: solid 1px transparent;
+    text-decoration: line-through;
+    text-decoration-color: transparent;
     padding: 5px;
     transition: 0.2s ease-in-out;
+    display: block;
   }
   .NavLinkSub {
     font-size: 1rem;
@@ -147,17 +157,30 @@
     letter-spacing: 0.2em;
     font-weight: 400;
     font-family: "Montserrat", sans-serif;
-    border-bottom: solid 1px transparent;
+    // border-bottom: solid 1px transparent;
+    text-decoration: line-through;
+    text-decoration-color: transparent;
     padding: 10px;
     transition: 0.2s ease-in-out;
   }
 
   .navMenu a:hover {
-    border-color: rgb(102, 102, 102);
+    // border-color: rgb(102, 102, 102);
+    text-decoration-color: black;
+    transition: 0.2s ease-in-out;
+    // .activeCrossed{
+    //   background-color:  rgba(243, 242, 242, 0.212);
+    // }
   }
   .is-active {
-    border-bottom: solid 1px rgb(44, 44, 44);
-    border-radius: 2px;
+    // border-bottom: solid 1px rgb(44, 44, 44);
+    // border-radius: 2px;
+    transition: 0.2s ease-in-out;
+    text-decoration-color: black;
+    // .activeCrossed{
+
+    //   background-color:rgba(63, 63, 63, 0.712) ;
+    // }
   }
 
   .navMenu li {
@@ -165,12 +188,12 @@
   }
   .NavMenuHamburgerContainer {
     position: absolute;
-    top: 2.4em;
+    top: 1.2em;
     right: 0px;
     display: flex;
     align-items: center;
     height: 40px;
-    margin-right: 5em;
+    margin-right: 5.5em;
     justify-content: center;
   }
 
@@ -272,8 +295,8 @@
     justify-content: center;
   }
   .socialMediaLogoSidenav {
-    width: 1em;
-    margin: 0.3em;
+    width: 0.9em;
+    margin: 0.34em;
     opacity: 1;
 
   }
@@ -356,7 +379,7 @@
     display: none;
   }
   #NavSpanName {
-    font-size: 4.5vw;
+    font-size: 3.6vw;
   }
 
   .navMenu a {
