@@ -1,3 +1,11 @@
+
+@font-face {
+  font-family: "Portal";
+  src: url("../../assets/Fonts/Portal-Black.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 #topNav {
   padding-top: 0.5%;
   padding-bottom: 3%;
@@ -9,7 +17,7 @@
   background-color: white;
   z-index: 99;
   transition: 0.5s ease-in-out;
-  border-bottom: 1px solid #f7f7f7;
+  // border-bottom: 1px solid #f7f7f7;
 }
 
 .hamburgerContainer {
@@ -84,7 +92,7 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
   letter-spacing: 0.4em;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #131313;
 }
 #navDivName a {

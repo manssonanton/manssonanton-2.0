@@ -23,7 +23,7 @@ import {
   //   ])
   // ]
 })
-export class NavbarComponent implements OnInit, AfterViewInit {
+export class NavbarComponent implements OnInit {
   // @HostListener('window:scroll', ['$event']) // for window scroll events
   // @ViewChild('NavLink') NavLink: HTMLElement;
   prevScrollpos = window.pageYOffset;
@@ -32,8 +32,6 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   constructor() {
     gsap.registerPlugin(TimelineMax);
-  }
-  ngAfterViewInit(): void {
   }
 
   ngOnInit(): void {

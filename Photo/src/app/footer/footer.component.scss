@@ -19,21 +19,22 @@ footer {
                 font-family: "Montserrat", sans-serif;
                 font-weight: 900;
                 letter-spacing: 0.4em;
-                font-size: 1.1rem;
+                font-size: 1rem;
                 color: #131313;
             }
             .footer-text {
                 font-family: "Noto Sans JP", sans-serif;
                 font-weight: 200;
-                font-size: 12px;
+                font-size: 11px;
                 letter-spacing: 0.1em;
                 line-height: 2;
             }
             .footerHeader{
                 font-family: "Montserrat", sans-serif;
                 font-weight: 900;
-                font-size: 0.8rem;
+                font-size: 0.7rem;
                 color: #131313;
+                letter-spacing: 0.1em;
             }
             ul {
                 list-style-type: none;
@@ -41,7 +42,8 @@ footer {
             }
 
             .footerLink {
-                font-size: 0.7rem;
+                letter-spacing: 0.1em;
+                font-size: 0.6rem;
                 text-decoration: none;
                 color: #707070;
                 font-weight: 800;

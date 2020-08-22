@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit, AfterContentInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, AfterContentInit, ElementRef } from '@angular/core';
 import { PhotoService } from '../photo.service';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { useAnimation, trigger, transition, state, style, animate } from '@angular/animations';
@@ -19,24 +19,24 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   myOptions: NgxMasonryOptions = {
     percentPosition: true,
   };
-  // query: any = <any>{};
   page: number = 0;
-  viewPhotoUrls: string[] = [
-    "../assets/Pictures/Kyoto/DSC03478.jpg",
-    "../assets/Pictures/Kyoto/DSC03478.jpg",
-    "../assets/Pictures/Kyoto/DSC03478.jpg",
-    "../assets/Pictures/niseko.jpg",
-    "../assets/Pictures/Kyoto/DSC03478.jpg",
-    "../assets/Pictures/niseko.jpg",
-    "../assets/Pictures/Kyoto/DSC03478.jpg",
-    "../assets/Pictures/niseko.jpg",
-    "../assets/Pictures/niseko.jpg",
-  ];
-  // viewPhotoUrls: string[] = [];
+  // viewPhotoUrls: string[] = [
+  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
+  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
+  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
+  //   "../assets/Pictures/niseko.jpg",
+  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
+  //   "../assets/Pictures/niseko.jpg",
+  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
+  //   "../assets/Pictures/niseko.jpg",
+  //   "../assets/Pictures/niseko.jpg",
+  // ];
+  viewPhotoUrls: string[] = [];
   photoUrls: string[] = [];
-  images = [];
+
   constructor(
-    private photoService: PhotoService
+    private photoService: PhotoService,
+    private _elemRef: ElementRef
   ) { }
   ngAfterViewInit() {
     // this.masonry.reloadItems();
@@ -44,7 +44,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    // this.requestPhotos();
+    this.requestPhotos();
   }
 
 
@@ -58,17 +58,19 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   }
 
 
-  onImageLoad(evt) {
-    if (evt && evt.target) {
-      const x = evt.srcElement.x;
-      const y = evt.srcElement.y;
-      const width = evt.srcElement.width;
-      const height = evt.srcElement.height;
-      var portrait = height > width ? true : false;
-      if (portrait === false) {
-        evt.target.parentElement.className = "masonry-item masonry-item-wide"
-      }
-    }
+  openModal(ev) {
+    const original = document.querySelector(".full-img") as HTMLImageElement;
+    const modal = document.querySelector(".modal") as HTMLElement;
+    // modal.classList.add(".modal.open");
+    original.src = ev.target.src;
+    modal.style.opacity = "1";
+    modal.style.pointerEvents = "All";
+  }
+
+  closeModal() {
+    const modal = document.querySelector(".modal") as HTMLElement;
+    modal.style.opacity = "0";
+    modal.style.pointerEvents = "None";
   }
 
   loadMorePhotos() {
@@ -90,6 +92,20 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
 }
 
 
+
+
+  // onImageLoad(evt) {
+  //   if (evt && evt.target) {
+  //     const x = evt.srcElement.x;
+  //     const y = evt.srcElement.y;
+  //     const width = evt.srcElement.width;
+  //     const height = evt.srcElement.height;
+  //     var portrait = height > width ? true : false;
+  //     if (portrait === false) {
+  //       evt.target.parentElement.className = "masonry-item masonry-item-wide"
+  //     }
+  //   }
+  // }
   // loadImages(): void {
   //   this.photoService.fetchImages()
   //     .subscribe(images => this.photoUrls = images);

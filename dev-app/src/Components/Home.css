@@ -1,0 +1,29 @@
+.home{
+    display: grid;
+    min-height: 90vh;
+    grid-template-columns: 5% repeat(3, minmax(5rem, 1fr)) 5%;
+    grid-template-rows: 1fr 2fr 1fr;
+    align-items: center;
+}
+h3{
+    font-size: 7rem;
+    grid-column: 2/3;
+    text-align: center;
+}
+
+.info-text{
+    grid-column: 4/5;
+    grid-row: 3/4;
+    align-items: center;
+}
+p{
+    font-size: 5rem;  
+}
+img{
+    grid-row: 2/3;
+    grid-column: 4/5;
+    width: 75%;
+    object-fit: cover;
+    align-self: center;
+    justify-self: center;
+}
