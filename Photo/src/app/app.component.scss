@@ -1,0 +1,41 @@
+.cursor {
+    width: 4rem;
+    height: 4rem;
+    border: 0.5px solid rgba(19, 19, 19, 0.473);
+    z-index: 999999999999999999999999999999999;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    cursor: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 200;
+    font-family: "Montserrat", sans-serif;
+    color: rgba(19, 19, 19, 0.473);
+    transition: all 0.2s ease;
+    transition-property: width, height, border, font-size, color;
+    transform-origin: 100% 100%;
+}
+.link-grow {
+    width: 7rem;
+    height: 7rem;
+    border: 1px solid rgba(19, 19, 19, 0.918);
+    font-size: 2.5rem;
+    color: rgba(19, 19, 19, 0.918);
+}
+@media screen and (max-width: 500px) {
+    .link-grow {
+        width: 0rem;
+        height: 0rem;
+        visibility: hidden;
+    }
+
+    .cursor {
+        width: 0rem;
+        height: 0rem;
+        visibility: hidden;
+    }
+}

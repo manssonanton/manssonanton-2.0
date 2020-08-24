@@ -6,6 +6,10 @@
   font-style: normal;
 }
 
+a:hover{
+  cursor: none;
+}
+
 #topNav {
   padding-top: 0.5%;
   padding-bottom: 3%;
@@ -41,7 +45,7 @@
   }
 
   .hamburger {
-    cursor: pointer;
+    // cursor: pointer;
     width: 35px;
     align-items: center;
 
@@ -91,8 +95,8 @@
 #NavSpanName {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  letter-spacing: 0.4em;
-  font-size: 1.2rem;
+  letter-spacing: 0.5em;
+  font-size: 1rem;
   color: #131313;
 }
 #navDivName a {
@@ -207,7 +211,7 @@
 
   .NavMenuhamburger:hover {
     opacity: 0.6;
-    cursor: pointer;
+    // cursor: pointer;
   }
   .NavMenuhamburger:hover .x1 {
     transform: translateY(0rem) rotate(-134deg);
@@ -289,7 +293,7 @@
     animation: arrowUpanimation 1s infinite alternate;
   }
   #bottom-right:hover {
-    cursor: pointer;
+    // cursor: pointer;
   }
 
   .mediaSideNavLinks {
@@ -312,6 +316,7 @@
     opacity: 1;
     transform: scale(1.2) translate(0, -0.1em);
     transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: none;
   }
   .socialMediaLogoSidenav:not(hover) {
     transition: 300ms ease-in;
@@ -358,7 +363,7 @@
     height: 3em;
     margin-right: 2em;
     .hamburger {
-      cursor: pointer;
+      // cursor: pointer;
       width: 34px;
       align-items: center;
       #bar1 {
