@@ -1,7 +1,87 @@
-footer{
-    position: absolute;
-    bottom: 0;
-    height: 200px;
+footer {
+    position: relative;
+    bottom: -20vh;
+        height: 20vh;
     width: 100%;
- background-color: red;
+    border-top: 1px solid #f1f1f1;
+
+    .footer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .footer-flex {
+            width: 10%;
+            margin-right: 2%;
+            margin-left: 2%;
+            margin-top: 1%;
+
+            .footerName {
+                font-family: "Montserrat", sans-serif;
+                font-weight: 900;
+                letter-spacing: 0.4em;
+                font-size: 1rem;
+                color: #131313;
+            }
+            .footer-text {
+                font-family: "Noto Sans JP", sans-serif;
+                font-weight: 200;
+                font-size: 11px;
+                letter-spacing: 0.1em;
+                line-height: 2;
+            }
+            .footerHeader{
+                font-family: "Montserrat", sans-serif;
+                font-weight: 900;
+                font-size: 0.7rem;
+                color: #131313;
+                letter-spacing: 0.1em;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .footerLink {
+                letter-spacing: 0.1em;
+                font-size: 0.6rem;
+                text-decoration: none;
+                color: #707070;
+                font-weight: 800;
+                font-family: "Montserrat", sans-serif;
+                padding-bottom: 8px;
+                display: block;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    footer {
+        .footer-container {
+            display: flex;
+            .footer-flex {
+                justify-content: center;
+                align-items: center;
+                width: 50%;
+                margin-top: 1%;
+    
+                .footerName {
+                    font-size: 0.8rem;
+                }
+                .footer-text {
+                    font-size: 11px;
+                }
+                .footerHeader{
+                    font-size: 0.7rem;
+                }
+    
+                .footerLink {
+                    font-size: 0.6rem;
+                }
+            }
+        }
+    }
+    
+
 }

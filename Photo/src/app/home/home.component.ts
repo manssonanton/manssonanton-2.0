@@ -15,9 +15,9 @@ import { PhotoService } from '../photo.service';
   ]
 })
 export class HomeComponent implements OnInit {
-  public slides = [];
-//   slides: string[] = [
-//     "../assets/Pictures/Kyoto.jpg",
+  // public slides = [];
+  slides: string[] = [
+    "../assets/Pictures/sälka.jpg",
 //   "../assets/Pictures/niseko.jpg",
 // "../assets/Pictures/Malmö.jpg",
 // "../assets/Pictures/DSC00476.jpg",
@@ -31,13 +31,13 @@ export class HomeComponent implements OnInit {
 // "../assets/Pictures/Kyoto.jpg",
 //   "../assets/Pictures/niseko.jpg",
 // "../assets/Pictures/Malmö.jpg",
-//   ];
+  ];
   constructor(
     private photoService: PhotoService
   ) { }
 
   ngOnInit(): void {
-    this.getHomePhotos()
+    // this.getHomePhotos()
   }
 
 

@@ -34,9 +34,11 @@
                 </a>
             </nav>
         </div>
-        <div id="bottom-right" (click) = "scrollToTop()">
-            <i ><svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 17 10" ><path class="cls-1" d="M6.22,8.75,3.37,5.89H17V4.12H3.37L6.22,1.25,5,0,0,5l5,5Z"></path></svg></i>
-             <span class="arrow-txt">TOP</span>
+        <div id="bottom-right" (click)="scrollToTop()">
+            <i><svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 17 10">
+                    <path class="cls-1" d="M6.22,8.75,3.37,5.89H17V4.12H3.37L6.22,1.25,5,0,0,5l5,5Z"></path>
+                </svg></i>
+            <span class="arrow-txt">TOP</span>
         </div>
     </div>
 </section>
@@ -44,13 +46,15 @@
 <section class="left-navigation">
     <div id="leftNav">
         <div id="bottom-left">
-            <i ><svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 17 10" class="arrow-down"><path class="cls-1" d="M6.22,8.75,3.37,5.89H17V4.12H3.37L6.22,1.25,5,0,0,5l5,5Z"></path></svg></i>
-             <span class="arrow-txt">SCROLL</span>
+            <i><svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 17 10" class="arrow-down">
+                    <path class="cls-1" d="M6.22,8.75,3.37,5.89H17V4.12H3.37L6.22,1.25,5,0,0,5l5,5Z"></path>
+                </svg></i>
+            <span class="arrow-txt">SCROLL</span>
         </div>
     </div>
 </section>
-<div id="navMenuContainer" (click)="isToggled" >
-<!-- [@test]="isToggled"> -->
+<div id="navMenuContainer" (click)="isToggled">
+    <!-- [@test]="isToggled"> -->
     <div class="NavMenuHamburgerContainer">
         <div class="NavMenuhamburger" (click)="toggleMenu()">
             <div id="cross1"></div>
@@ -60,26 +64,27 @@
     <nav class="navMenu">
         <ul class="menuList">
             <li><a (click)="toggleMenu()" routerLink="" routerLinkActive="is-active" class="NavLink"
-                    [routerLinkActiveOptions]="{ exact: true }">HOME
+                    [routerLinkActiveOptions]="{ exact: true }"> HOME 
+                    <!-- <span class="activeCrossed"></span> -->
                 </a>
             </li>
             <li>
-                <a (click)="toggleMenu()" routerLink="portfolio" routerLinkActive="is-active" class="NavLink">PORTFOLIO
-                </a>
+                <a (click)="toggleMenu()" routerLink="portfolio" routerLinkActive="is-active" class="NavLink"> PORTFOLIO 
+                    <span class="activeCrossed"></span></a>
             </li>
             <li>
                 <!-- <a (click)= "toggleMenu()" routerLinkActive="is-active" class="NavLink">FEATURES
                 </a> -->
-                <a routerLinkActive="is-active" class="NavLink">FEATURES
+                <a routerLinkActive="is-active" class="NavLink"> FEATURES 
                 </a>
             </li>
             <li>
                 <a (click)="toggleMenu()" routerLink="features/kyoto" routerLinkActive="is-active"
-                    class="NavLink NavLinkSub">KYOTO
+                    class="NavLink NavLinkSub"> KYOTO 
                 </a>
             </li>
             <li>
-                <a (click)="toggleMenu()" routerLink="about" routerLinkActive="is-active" class="NavLink">ABOUT
+                <a (click)="toggleMenu()" routerLink="about" routerLinkActive="is-active" class="NavLink"> ABOUT 
                 </a>
             </li>
         </ul>

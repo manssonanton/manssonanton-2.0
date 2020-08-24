@@ -21,6 +21,7 @@ import { OsakaComponent } from './osaka/osaka.component';
 import { MalmoComponent } from './malmo/malmo.component';
 import { FeaturesComponent } from './features/features.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ModalComponent } from './modal/modal.component';
 
 export class HammerConfig extends HammerGestureConfig { // Needed to enable vertical scroll for some reason
   overrides = <any>{
@@ -43,6 +44,7 @@ export class HammerConfig extends HammerGestureConfig { // Needed to enable vert
     MalmoComponent,
     FeaturesComponent,
     PageNotFoundComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
