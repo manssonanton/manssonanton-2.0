@@ -64,27 +64,27 @@
     <nav class="navMenu">
         <ul class="menuList">
             <li><a (click)="toggleMenu()" routerLink="" routerLinkActive="is-active" class="NavLink"
-                    [routerLinkActiveOptions]="{ exact: true }"> HOME 
+                    [routerLinkActiveOptions]="{ exact: true }"> 01. <span class="activeCrossed"> HOME</span>
                     <!-- <span class="activeCrossed"></span> -->
                 </a>
             </li>
             <li>
-                <a (click)="toggleMenu()" routerLink="portfolio" routerLinkActive="is-active" class="NavLink"> PORTFOLIO 
-                    <span class="activeCrossed"></span></a>
+                <a (click)="toggleMenu()" routerLink="portfolio" routerLinkActive="is-active" class="NavLink">02.
+                    <span class="activeCrossed"> PORTFOLIO</span>
+                </a>
             </li>
             <li>
-                <!-- <a (click)= "toggleMenu()" routerLinkActive="is-active" class="NavLink">FEATURES
-                </a> -->
-                <a routerLinkActive="is-active" class="NavLink"> FEATURES 
+                <a (click)="toggleMenu()" routerLink="features" routerLinkActive="is-active" class="NavLink">03.
+                    <span class="activeCrossed"> FEATURES</span>
                 </a>
             </li>
             <li>
                 <a (click)="toggleMenu()" routerLink="features/kyoto" routerLinkActive="is-active"
-                    class="NavLink NavLinkSub"> KYOTO 
+                    class="NavLink NavLinkSub">.01 <span class="activeCrossed"> KYOTO</span>
                 </a>
             </li>
             <li>
-                <a (click)="toggleMenu()" routerLink="about" routerLinkActive="is-active" class="NavLink"> ABOUT 
+                <a (click)="toggleMenu()" routerLink="about" routerLinkActive="is-active" class="NavLink">04. <span class="activeCrossed"> ABOUT</span>
                 </a>
             </li>
         </ul>
