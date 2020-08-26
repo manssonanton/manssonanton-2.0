@@ -1,16 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, useAnimation, transition } from '@angular/animations';
-import { scaleIn, scaleOut } from '../carousel.animations';
+import { trigger, useAnimation, transition, query, style, group, animate } from '@angular/animations';
+import { scaleIn, scaleOut, routeFadeAnimation, resetRoute } from '../carousel.animations';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
   animations: [
-    trigger("slideAnimation", [
-      /* scale */
-      transition("void => *", [useAnimation(scaleIn, {params: { time: '700ms' }} )]),
-      transition("* => void", [useAnimation(scaleOut, {params: { time: '500ms' }})]),
+    trigger('routeFadeAnimation', [
+      transition('* => *', [
+        ...resetRoute,
+        query(':enter', [style({ opacity: 0 })], {
+          optional: true,
+        }),
+        group([
+          query(
+            ':leave',
+            [style({ opacity: 1 }), animate('3s', style({ opacity: 0 }))],
+            { optional: true }
+          ),
+          query(
+            ':enter',
+            [style({ opacity: 0 }), animate('3s', style({ opacity: 1 }))],
+            { optional: true }
+          ),
+        ]),
+      ]),
     ])
   ]
 })

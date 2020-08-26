@@ -35,6 +35,9 @@ body {
   cursor: none;
   max-width: 100%;
   overflow-y: initial !important;
+  background-color: #f7f7f7;
+  position: relative;
+  z-index: -99999999999999999999999999999;
 }
 
 @font-face {
