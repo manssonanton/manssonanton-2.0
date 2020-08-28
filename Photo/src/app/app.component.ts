@@ -55,12 +55,28 @@ export class AppComponent implements AfterViewInit {
     });
   }
   cursorStyle() {
-    window.addEventListener('mousemove', this.cursorFunction);
-  }
-
-  cursorFunction(e) {
     const cursor = document.querySelector(".cursor") as HTMLElement;
-    cursor.style.top = (e.pageY + 'px');
-    cursor.style.left = (e.pageX + 'px');
+    window.addEventListener('mousemove', e =>{
+      cursor.style.top = (e.pageY + 'px');
+      cursor.style.left = (e.pageX + 'px');
+    });
+
+    window.addEventListener('click', e =>{
+      cursor.classList.add('expand');
+      setTimeout(() =>{
+        cursor.classList.remove('expand');
+      }, 500);
+    });
   }
 }
+
+
+// cursorStyle() {
+//   window.addEventListener('mousemove', this.cursorFunction);
+// }
+
+// cursorFunction(e) {
+//   const cursor = document.querySelector(".cursor") as HTMLElement;
+//   cursor.style.top = (e.pageY + 'px');
+//   cursor.style.left = (e.pageX + 'px');
+// }

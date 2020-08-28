@@ -18,16 +18,22 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
   myOptions: NgxMasonryOptions = {
     percentPosition: true,
+    gutter: 100
   };
   page: number = 0;
   // viewPhotoUrls: string[] = [
-  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
-  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
-  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
+  //   "../assets/Pictures/Home/DSC02106.jpg",
   //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
   //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/Kyoto/DSC03478.jpg",
+  //   "../assets/Pictures/niseko.jpg",
+  //   "../assets/Pictures/Home/DSC02106.jpg",
+  //   "../assets/Pictures/Home/DSC02106.jpg",
+  //   "../assets/Pictures/Home/DSC02106.jpg",
+  //   "../assets/Pictures/Home/DSC02106.jpg",
+  //   "../assets/Pictures/Home/DSC02106.jpg",
+  //   "../assets/Pictures/niseko.jpg",
+  //   "../assets/Pictures/niseko.jpg",
+  //   "../assets/Pictures/niseko.jpg",
   //   "../assets/Pictures/niseko.jpg",
   //   "../assets/Pictures/niseko.jpg",
   // ];

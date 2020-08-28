@@ -6,7 +6,7 @@
 // }
 
 a:hover {
-  cursor: none;
+  // cursor: none;
 }
 
 #topNav {
@@ -44,7 +44,7 @@ a:hover {
   }
 
   .hamburger {
-    // cursor: pointer;
+    cursor: pointer;
     width: 35px;
     align-items: center;
 
@@ -113,7 +113,7 @@ a:hover {
   height: 100%;
   position: fixed;
   display: block;
-  z-index: 10000;
+  z-index: 99;
   border-bottom: solid 2px rgb(228, 228, 228);
 
   .navMenu {
@@ -226,7 +226,7 @@ a:hover {
 
   .NavMenuhamburger:hover {
     opacity: 0.6;
-    // cursor: pointer;
+    cursor: pointer;
   }
   .NavMenuhamburger:hover .x1 {
     transform: translateY(0rem) rotate(-134deg);
@@ -308,7 +308,7 @@ a:hover {
     animation: arrowUpanimation 1s infinite alternate;
   }
   #bottom-right:hover {
-    // cursor: pointer;
+    cursor: pointer;
   }
 
   .mediaSideNavLinks {
@@ -330,7 +330,7 @@ a:hover {
     opacity: 1;
     transform: scale(1.2) translate(0, -0.1em);
     transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: none;
+    // cursor: none;
   }
   .socialMediaLogoSidenav:not(hover) {
     transition: 300ms ease-in;
@@ -377,7 +377,7 @@ a:hover {
     height: 3em;
     margin-right: 2em;
     .hamburger {
-      // cursor: pointer;
+      cursor: pointer;
       width: 34px;
       align-items: center;
       #bar1 {
