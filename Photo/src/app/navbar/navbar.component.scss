@@ -93,7 +93,7 @@ a:hover {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
   letter-spacing: 0.5em;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #131313;
 }
 #navDivName a {
@@ -261,7 +261,7 @@ a:hover {
 
 #leftNav {
   visibility: hidden;
-  height: 100%; /* Full-height: remove this if you want "auto" height */
+  height: 100%; 
   width: 5em; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   top: 0; /* Stay at the top */
@@ -269,17 +269,16 @@ a:hover {
   overflow: hidden; /* Disable horizontal scroll */
   z-index: 10000;
   #bottom-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     bottom: 4em;
     color: black;
-    transform-box: fill-box;
-    transform-origin: center;
     transform: rotate(-90deg);
-    margin: auto 0;
-    display: table;
   }
   .arrow-down {
-    animation: arrowDownanimation 1s infinite alternate;
+    animation: arrowDownanimation 0.5s infinite alternate;
   }
 }
 
@@ -322,8 +321,8 @@ a:hover {
     justify-content: center;
   }
   .socialMediaLogoSidenav {
-    width: 0.9em;
-    margin: 0.34em;
+    width: 1em;
+    margin: 0.5em;
     opacity: 1;
   }
   .socialMediaLogoSidenav:hover {
@@ -354,7 +353,7 @@ a:hover {
     transform: translateX(0px);
   }
   to {
-    transform: translateX(-10px);
+    transform: translateX(-3px);
   }
 }
 @keyframes arrowUpanimation {

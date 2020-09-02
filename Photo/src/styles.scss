@@ -27,6 +27,9 @@
 }
 * {
   box-sizing: border-box;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
 }
 html,
 body {
@@ -35,7 +38,7 @@ body {
   // cursor: none;
   max-width: 100%;
   overflow-y: initial !important;
-  background-color: #f7f7f7;
+  background-color: #f8f9fa;
   position: relative;
   z-index: -99999999999999999999999999999;
 }
