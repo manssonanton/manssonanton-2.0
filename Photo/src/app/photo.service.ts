@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Observable, of } from "rxjs";
 import { images } from "../app/image.data";
+import {photoDetails} from './photoDetails'
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,8 @@ export class PhotoService {
   // searchPhotos(query: string, page: number = 1) {
   //   return this.http.get(`https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=15&page=${page}`)
   // }
-  getPhotos() {
-    return this.http.get(`https://manssonanton.com/pictures/photolist.php`)
+  getPhotos(): Observable<photoDetails[]> {
+    return this.http.get<photoDetails[]>(`https://manssonanton.com/pictures/photolist.php`)
   }
 
   // fetchImages(): Observable<any> {

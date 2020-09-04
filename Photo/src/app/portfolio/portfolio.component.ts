@@ -1,8 +1,10 @@
-import { Component, OnInit, ViewChild, AfterViewInit, AfterContentInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PhotoService } from '../photo.service';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
-import { useAnimation, trigger, transition, state, style, animate } from '@angular/animations';
+import { useAnimation, trigger, transition } from '@angular/animations';
 import { scaleIn, scaleOut } from '../carousel.animations';
+import { photoDetails } from '../photoDetails'
+
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
@@ -14,55 +16,73 @@ import { scaleIn, scaleOut } from '../carousel.animations';
     ])
   ]
 })
-export class PortfolioComponent implements OnInit, AfterViewInit {
+export class PortfolioComponent implements OnInit {
+
   @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
+
   myOptions: NgxMasonryOptions = {
     percentPosition: true,
     gutter: 100
   };
+
   page: number = 0;
-  // viewPhotoUrls: string[] = [
-  //   "../assets/Pictures/Home/DSC02106.jpg",
-  //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/Home/DSC02106.jpg",
-  //   "../assets/Pictures/Home/DSC02106.jpg",
-  //   "../assets/Pictures/Home/DSC02106.jpg",
-  //   "../assets/Pictures/Home/DSC02106.jpg",
-  //   "../assets/Pictures/Home/DSC02106.jpg",
-  //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/niseko.jpg",
-  //   "../assets/Pictures/niseko.jpg",
-  // ];
-  viewPhotoUrls: string[] = [];
+  viewPhotoUrls: photoDetails[] = [];
   photoUrls: string[] = [];
+  photoDetails: photoDetails[] = [{Url: "../../assets/Pictures/niseko.jpg", Date: new Date()}, {Url: "../../assets/Pictures/niseko.jpg", Date: new Date()}, {Url: "../../assets/Pictures/niseko.jpg", Date: new Date()}]
+
 
   constructor(
     private photoService: PhotoService,
-    private _elemRef: ElementRef
   ) { }
-  ngAfterViewInit() {
-    // this.masonry.reloadItems();
-    this.masonry.layout();
-  }
 
   ngOnInit() {
     this.requestPhotos();
   }
 
-
   requestPhotos() {
     this.photoService.getPhotos()
       .subscribe(res => {
-        this.photoUrls = this.photoUrls.concat((res as any).PhotoData.map(p => "https://manssonanton.com/pictures/" + p.Url));  // Sett it to the correct url
-        this.photoUrls.splice(-1, 1)  // REmove the last row, PhP bug in the script on backend
-        this.loadMorePhotos()   // Load the first 15 images to view
+        this.photoDetails = res
+        this.loadMorePhotos();
+        this.sortByLargestDate(this.viewPhotoUrls);
       })
+    // this.photoService.getPhotos()
+    // .subscribe(res => {
+    //   this.photoUrls = this.photoUrls.concat((res as any).PhotoData.map(p => "https://manssonanton.com/pictures/" + p.Url));  // Sett it to the correct url
+    //   this.photoUrls.splice(-1, 1)  // REmove the last row, PhP bug in the script on backend
+    //   this.loadMorePhotos()   // Load the first 15 images to view
+    // })
   }
 
+  sortPhotos() {
+    const text = document.querySelector("#change-sort") as HTMLElement;
+    if (text.innerText !== 'LATEST') {
+      text.innerText = 'LATEST';
+      this.viewPhotoUrls = this.sortByLargestDate(this.viewPhotoUrls);
+
+    } else {
+      text.innerText = 'OLDEST';
+      this.viewPhotoUrls = this.sortBysmallestDate(this.viewPhotoUrls)
+    }
+    // console.log(this.photoDetails);
+    this.masonry.reloadItems();
+    this.masonry.layout();
+  }
+
+  sortByLargestDate(photoDetails: photoDetails[]) {
+    return photoDetails.sort((a, b) => {
+      return <any>new Date(b.Date) - <any>new Date(a.Date);
+    });
+  }
+  sortBysmallestDate(photoDetails: photoDetails[]) {
+    return photoDetails.sort((a, b) => {
+      return <any>new Date(a.Date) - <any>new Date(b.Date);
+    });
+  }
+
+  filterPhotos() {
+
+  }
 
   openModal(ev) {
     const original = document.querySelector(".full-img") as HTMLImageElement;
@@ -80,10 +100,9 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   }
 
   loadMorePhotos() {
-    this.page++
-    var count = this.viewPhotoUrls.length
-    for (var i = count; i < (this.page * 15); i++) {
-      if (this.photoUrls[i] === undefined) {  // Hide button in case we reac hthe end of the photos
+    var count = Object.keys(this.photoDetails).length
+    for (var i = (this.page * 15); i <= (this.page * 15 + 15); i++) {
+      if (i === count) {  // Hide button in case we reac hthe end of the photos
         const button = document.getElementsByClassName("ViewMoreContainer")[0];
         if (button instanceof HTMLElement) {
           button.style.display = "none";
@@ -91,9 +110,10 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
         break;
       }
       else {
-        this.viewPhotoUrls[i] = this.photoUrls[i]
+        this.viewPhotoUrls.push(this.photoDetails[i])
       }
     }
+    this.page++
   }
 }
 

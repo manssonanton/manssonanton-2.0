@@ -32,6 +32,8 @@ export class AppComponent implements AfterViewInit {
     const cursor = document.querySelector(".cursor") as HTMLElement;
     const hamburger = document.querySelector(".hamburger") as HTMLElement;
     const navHamburger = document.querySelector(".NavMenuhamburger") as HTMLElement;
+    const ViewMoreButton = document.querySelector(".ViewMoreButton") as HTMLElement;
+    const shortText = document.querySelector("#short-text") as HTMLElement;
     const links = document.getElementsByTagName('a');
     for (let link of links) {
       link.addEventListener('mouseover', () => {
@@ -47,6 +49,18 @@ export class AppComponent implements AfterViewInit {
     hamburger.addEventListener('mouseleave', () => {
       cursor.classList.remove('link-grow');
     });
+    // shortText.addEventListener('mouseover', () => {
+    //   cursor.classList.add('link-grow');
+    // });
+    // shortText.addEventListener('mouseleave', () => {
+    //   cursor.classList.remove('link-grow');
+    // });
+    // ViewMoreButton.addEventListener('mouseover', () => {
+    //   cursor.classList.add('link-grow');
+    // });
+    // ViewMoreButton.addEventListener('mouseleave', () => {
+    //   cursor.classList.remove('link-grow');
+    // });
     navHamburger.addEventListener('mouseover', () => {
       cursor.classList.add('link-grow');
     });
