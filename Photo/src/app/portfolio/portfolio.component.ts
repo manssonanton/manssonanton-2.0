@@ -28,7 +28,7 @@ export class PortfolioComponent implements OnInit {
   page: number = 0;
   viewPhotoUrls: photoDetails[] = [];
   photoUrls: string[] = [];
-  photoDetails: photoDetails[] = [{Url: "../../assets/Pictures/niseko.jpg", Date: new Date()}, {Url: "../../assets/Pictures/niseko.jpg", Date: new Date()}, {Url: "../../assets/Pictures/niseko.jpg", Date: new Date()}]
+  photoDetails: photoDetails[] = []
 
 
   constructor(

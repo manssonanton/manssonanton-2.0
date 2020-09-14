@@ -1,6 +1,6 @@
-import { Component, OnInit, AfterViewInit, ViewChild, Renderer2, ElementRef } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { slideInAnimation } from './animations';
+import { slideInAnimation } from './route-animations';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +8,11 @@ import { slideInAnimation } from './animations';
   styleUrls: ['./app.component.scss'],
   animations: [
     slideInAnimation
-    // animation triggers go here
   ]
 })
 export class AppComponent implements AfterViewInit {
 
   constructor(
-    private renderer: Renderer2,
-    private elem: ElementRef
   ) { }
 
 
@@ -24,16 +21,12 @@ export class AppComponent implements AfterViewInit {
     this.cursorHoverStyle();
   }
 
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
-  }
-
   cursorHoverStyle() {
     const cursor = document.querySelector(".cursor") as HTMLElement;
     const hamburger = document.querySelector(".hamburger") as HTMLElement;
     const navHamburger = document.querySelector(".NavMenuhamburger") as HTMLElement;
-    const ViewMoreButton = document.querySelector(".ViewMoreButton") as HTMLElement;
-    const shortText = document.querySelector("#short-text") as HTMLElement;
+    // const ViewMoreButton = document.querySelector(".ViewMoreButton") as HTMLElement;
+    // const shortText = document.querySelector("#short-text") as HTMLElement;
     const links = document.getElementsByTagName('a');
     for (let link of links) {
       link.addEventListener('mouseover', () => {
@@ -83,14 +76,3 @@ export class AppComponent implements AfterViewInit {
     });
   }
 }
-
-
-// cursorStyle() {
-//   window.addEventListener('mousemove', this.cursorFunction);
-// }
-
-// cursorFunction(e) {
-//   const cursor = document.querySelector(".cursor") as HTMLElement;
-//   cursor.style.top = (e.pageY + 'px');
-//   cursor.style.left = (e.pageX + 'px');
-// }
