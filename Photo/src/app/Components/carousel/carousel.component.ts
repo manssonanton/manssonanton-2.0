@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { trigger, transition, style, animate, useAnimation } from "@angular/animations";
-import { scaleIn, scaleOut, fadeOut, fadeIn } from '../carousel.animations';
+import { scaleIn, scaleOut, fadeOut, fadeIn } from '../../Animations/carousel.animations';
 
 @Component({
   selector: 'carousel',

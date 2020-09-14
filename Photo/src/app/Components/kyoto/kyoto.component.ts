@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxMasonryOptions } from 'ngx-masonry';
-import { PhotoService } from '../photo.service';
+import { PhotoService } from '../../Services/photo.service';
 import { useAnimation, transition, trigger } from '@angular/animations';
-import { scaleIn, scaleOut } from '../carousel.animations';
+import { scaleIn, scaleOut } from '../../Animations/carousel.animations';
 
 @Component({
   selector: 'app-kyoto',

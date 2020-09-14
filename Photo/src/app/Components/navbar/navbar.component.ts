@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener, ViewChild, AfterViewInit } from '@angular/core';
 import { useAnimation, trigger, transition, state, style, animate } from '@angular/animations';
-import { scaleIn, scaleOut } from '../carousel.animations';
+import { scaleIn, scaleOut } from '../../Animations/carousel.animations';
 import {
   gsap,
   CSSPlugin,

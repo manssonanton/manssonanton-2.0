@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { PhotoService } from '../photo.service';
+import { PhotoService } from '../../Services/photo.service';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { useAnimation, trigger, transition } from '@angular/animations';
-import { scaleIn, scaleOut } from '../carousel.animations';
-import { photoDetails } from '../photoDetails'
+import { scaleIn, scaleOut } from '../../Animations/carousel.animations';
+import { photoDetails } from '../../Shared/photoDetails'
 
 @Component({
   selector: 'app-portfolio',
@@ -46,12 +46,6 @@ export class PortfolioComponent implements OnInit {
         this.loadMorePhotos();
         this.sortByLargestDate(this.viewPhotoUrls);
       })
-    // this.photoService.getPhotos()
-    // .subscribe(res => {
-    //   this.photoUrls = this.photoUrls.concat((res as any).PhotoData.map(p => "https://manssonanton.com/pictures/" + p.Url));  // Sett it to the correct url
-    //   this.photoUrls.splice(-1, 1)  // REmove the last row, PhP bug in the script on backend
-    //   this.loadMorePhotos()   // Load the first 15 images to view
-    // })
   }
 
   sortPhotos() {
@@ -64,7 +58,6 @@ export class PortfolioComponent implements OnInit {
       text.innerText = 'OLDEST';
       this.viewPhotoUrls = this.sortBysmallestDate(this.viewPhotoUrls)
     }
-    // console.log(this.photoDetails);
     this.masonry.reloadItems();
     this.masonry.layout();
   }
@@ -78,10 +71,6 @@ export class PortfolioComponent implements OnInit {
     return photoDetails.sort((a, b) => {
       return <any>new Date(a.Date) - <any>new Date(b.Date);
     });
-  }
-
-  filterPhotos() {
-
   }
 
   openModal(ev) {
@@ -116,55 +105,3 @@ export class PortfolioComponent implements OnInit {
     this.page++
   }
 }
-
-
-
-
-  // onImageLoad(evt) {
-  //   if (evt && evt.target) {
-  //     const x = evt.srcElement.x;
-  //     const y = evt.srcElement.y;
-  //     const width = evt.srcElement.width;
-  //     const height = evt.srcElement.height;
-  //     var portrait = height > width ? true : false;
-  //     if (portrait === false) {
-  //       evt.target.parentElement.className = "masonry-item masonry-item-wide"
-  //     }
-  //   }
-  // }
-  // loadImages(): void {
-  //   this.photoService.fetchImages()
-  //     .subscribe(images => this.photoUrls = images);
-  //     this.preloadImages()
-  // }
-
-  // preloadImages() {
-  //   for (const slide of this.photoUrls) {
-  //     var imageSize = new Image().src = slide;
-  //     imageSize.onload = function() { callback(this.width, this.height); }
-  //     console.log(imageSize);
-  //   }
-  // }
-  // onScroll() {
-  //   this.page++
-  //   if (!this.query.search) {
-  //     // this.getPhotos();
-  //     // console.log("getphotos")
-  //   }
-  //   else {
-  //     // this.requestSearchPhotos();
-  //   }
-  // }
-  // getPhotos() {
-  //   this.photoService.randomPhotos(1)
-  //     .subscribe(res => {
-  //       this.photoUrls = (res as any).photos.map(p => p.src.original);
-  //     });
-  // }
-
-  // requestSearchPhotos() {
-  //   this.photoService.searchPhotos(this.query.search, this.page)
-  //     .subscribe(res => {
-  //       this.photoUrls = this.photoUrls.concat((res as any).photos.map(p => p.src.original));
-  //     })
-  // }

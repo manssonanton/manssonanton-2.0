@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, useAnimation } from '@angular/animations';
-import { scaleIn, scaleOut, loadIn } from '../carousel.animations';
-import { PhotoService } from '../photo.service';
+import { scaleIn, scaleOut, loadIn } from '../../Animations/carousel.animations';
+import { PhotoService } from '../../Services/photo.service';
 
 @Component({
   selector: 'app-home',

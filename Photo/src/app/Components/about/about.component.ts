@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, useAnimation, transition, query, style, group, animate } from '@angular/animations';
-import { scaleIn, scaleOut, routeFadeAnimation, resetRoute } from '../carousel.animations';
+import { scaleIn, scaleOut, routeFadeAnimation, resetRoute } from '../../Animations/carousel.animations';
 
 @Component({
   selector: 'app-about',
