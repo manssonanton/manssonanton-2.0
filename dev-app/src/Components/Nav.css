@@ -1,41 +1,101 @@
-.nav-container{
+.nav-container {
 }
-nav{
+nav {
     width: 90%;
     margin: auto;
-    min-height: 8vh;
-    padding: 4rem 0rem;
+    min-height: 3vh;
+    padding: 1rem 0rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.nav-list{
+.nav-list {
     display: flex;
     justify-content: space-between;
     flex: 1;
     list-style: none;
-    font-size: 1rem;
-    font-weight: 800;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.nav-list-item {
+    padding: 2rem;
+}
+a{
+    transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.nav-list-item a:hover {
+    /* color: #31dd48; */
+    cursor: pointer;
+    text-decoration: line-through;
+}
+.list-item-number {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #31dd48;
     letter-spacing: 0.4em;
 }
-.logo{
+.logo {
     flex: 4;
     font-size: 2.2rem;
-    font-weight: 900;
+    font-weight: 700;
     position: relative;
-    letter-spacing: -0.2em;
+    letter-spacing: 0.2em;
     transform: translate(1%, 0);
 }
-.logo::after{
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 6rem;
-        height: 6rem;
-        border: 5px solid #ecedee;
-        /* background: crimson; */
-        transform: translate(-25%, -28%);
-        /* mix-blend-mode: screen; */
-    }
+.logo-dev {
+    color: #31dd48;
+    font-size: 1.5rem;
+}
+
+#rightNav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 5%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    top: 0; /* Stay at the top */
+    right: 0;
+    overflow: hidden; /* Disable horizontal scroll */
+    z-index: 10000;
+}
+
+#leftNav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 4%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    top: 0; /* Stay at the top */
+    left: 0;
+    overflow: hidden; /* Disable horizontal scroll */
+    z-index: 10000;
+}
+.active{
+     color: #31dd48;
+     text-decoration: line-through;
+}
+
+.mediaSideNavLinks {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.socialMediaLogoSidenav {
+    opacity: 0.5;
+    padding: 1em;
+}
+svg{
+    fill: #e7e7e7;
+}
+.socialMediaLogoSidenav:hover {
+    opacity: 1;
+    transform: scale(1.2) translate(0, -0.1em);
+    transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.socialMediaLogoSidenav:not(hover) {
+    transition: 300ms ease-in;
+}

@@ -7,9 +7,9 @@ html{
   font-size: 62.5%;
 }
 body{
-  color: #ecedee;
-  background-color: #222629;
-  font-family: 'Montserrat', sans-serif;
+  color: #e7e7e7;
+  background-color: #14171a;
+  font-family: 'IBM Plex Mono', monospace;
 }
 /* h2{
   font-size: 7rem

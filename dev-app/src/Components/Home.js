@@ -2,15 +2,12 @@ import React from 'react';
 import './Home.css'
 
 function Home() {
-    return <div className= 'home'>
-            <h3 className= 'header-name'>MY NAME IS ANTON</h3>
-        <img src='https://manssonanton.com/assets/Pictures/About/me_ski.jpg'></img>
-        <div className= 'info-text'>
-            <p>
-                I'm a software engineer based in Sweden.
-            </p>
-        </div>
+    return <div className='home'>
+        <h4>Hi, my name is</h4>
+        <h2>Anton Månsson</h2>
+        <h3>I'm a software engineer</h3>
+        <p>During work I mostly develop backend in .NET but during my free time I enjoy doing web development and design.</p>
     </div>;
-  }
+}
 
-  export default Home;
+export default Home;
