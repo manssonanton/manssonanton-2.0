@@ -29,7 +29,7 @@ export class PortfolioComponent implements OnInit {
   viewPhotoUrls: photoDetails[] = [];
   photoUrls: string[] = [];
   photoDetails: photoDetails[] = []
-
+  errMsg: string;
 
   constructor(
     private photoService: PhotoService,
@@ -45,7 +45,8 @@ export class PortfolioComponent implements OnInit {
         this.photoDetails = res
         this.loadMorePhotos();
         this.sortByLargestDate(this.viewPhotoUrls);
-      })
+      },
+        errMsg => this.errMsg = <any>errMsg);
   }
 
   sortPhotos() {
