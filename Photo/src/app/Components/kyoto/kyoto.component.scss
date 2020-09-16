@@ -1,0 +1,224 @@
+.flex-container {
+  margin-top: 6%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .article-section{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      margin-bottom: 5%;
+  }
+  .article-section-margin{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 5%;
+  }
+}
+.text-container{
+  height: 50vh;
+}
+.article-header {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.7em;
+  .header-text {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 2.5rem;
+    word-spacing: 0.2em;
+    font-weight: 900;
+    letter-spacing: 0.3em;
+    margin: 0.3em;
+    display: block;
+  }
+  .sub-header-text {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.5em;
+    font-style: italic;
+    font-weight: 200;
+    margin: 0.3em;
+    display: block;
+  }
+
+  .poster-header {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    .posted{
+      font-size: 9px;
+      font-style: normal;
+      font-weight: 900;
+      margin-right: 1em;
+    }
+    .poster-name {
+      float: left;
+      margin-left: 1em;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      font-style: italic;
+      font-weight: 200;
+    }
+    .poster-time {
+      float: right;
+      margin-right: 1em;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      font-style: italic;
+      font-weight: 200;
+    }
+  }
+}
+.article-flex {
+  max-width: 35%;
+  margin: 1em;
+  align-items: center;
+}
+
+.article-flex-img {
+  max-width: 50%;
+  display: inline;
+  .flex-img {
+    width: 90%;
+  }
+  .portrait-img{
+    width: 65%;
+  }
+}
+.row {
+  flex-wrap: wrap;
+  display: flex;
+  width: 65%;
+  margin-top: 3%;
+}
+
+.column {
+  flex: 50%;
+  padding: 19px;
+  .portrait-img{
+    width: 100%;
+  }
+}
+.article-text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 200;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  line-height: 2;
+}
+
+@media screen and (max-width: 500px) {
+  .flex-container {
+    margin-top: 5em;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  
+    .article-section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin-bottom: 5%;
+    }
+  }
+  .text-container{
+    height: 50vh;
+  }
+  .article-header {
+    .header-text {
+      font-size: 1.5rem;
+    }
+    .sub-header-text {
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 0.8rem;
+    }
+  
+    .poster-header {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      .posted{
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 900;
+        margin-right: 0.5em;
+      }
+      .poster-name {
+        float: left;
+        margin-left: 1em;
+        font-family: "Noto Sans JP", sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        font-style: italic;
+        font-weight: 200;
+      }
+      .poster-time {
+        float: right;
+        margin-right: 1em;
+        font-family: "Noto Sans JP", sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        font-style: italic;
+        font-weight: 200;
+      }
+    }
+  }
+  .article-flex {
+    max-width: 90%;
+    margin: 1em;
+    align-items: center;
+  }
+  
+  .article-flex-img {
+    max-width: 100%;
+    display: inline;
+    .flex-img {
+      width: 90%;
+    }
+    .portrait-img{
+      width: 90%;
+    }
+  }
+  .row {
+    flex-wrap: wrap;
+    display: flex;
+    width: 65%;
+    margin-top: 3%;
+  }
+  
+  .column {
+    flex: 50%;
+    padding: 19px;
+    .portrait-img{
+      width: 100%;
+    }
+  }
+  .article-text {
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 200;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    line-height: 2;
+  }
+}

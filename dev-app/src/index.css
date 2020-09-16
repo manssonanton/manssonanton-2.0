@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  color: #ecedee;
+  background-color: #222629;
+  font-family: 'Montserrat', sans-serif;
+}
+/* h2{
+  font-size: 7rem
+}
+h1{
+  font-size: 7rem
+} */

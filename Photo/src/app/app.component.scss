@@ -1,0 +1,105 @@
+.cursor {
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 0.5px solid rgba(53, 53, 53, 0.473);
+    z-index: 1000;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    // cursor: none;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // font-size: 2rem;
+    // font-weight: 200;
+    // font-family: "Montserrat", sans-serif;
+    // color: rgba(19, 19, 19, 0.473);
+    // transition: all 0.2s ease;
+    transition-duration: 100ms;
+    transition-timing-function: ease-out;
+    transform: translateZ(100% 100%);
+    transition-property: width, height, border, font-size, color, transform;
+    // transform-origin: 100% 100%;
+    animation: cursorAnim1 0.5s infinite alternate;
+}
+
+.cursor::after{
+    content: "";
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 5px solid rgba(148, 148, 148, 0.473);
+    z-index: 1000;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 0.3;
+    top: -6px;
+    left: -6px;
+    animation: cursorAnim2 0.5s infinite alternate;
+    
+}
+.link-grow {
+    animation: cursorHover 0.3s ease-out forwards;
+}
+
+.expand {
+    animation: cursorAnim3 .5s forwards;
+    border: 1px solid rgba(53, 53, 53, 0.473);
+}
+@media screen and (max-width: 500px) {
+    .link-grow {
+        visibility: hidden;
+    }
+
+    .cursor {
+        visibility: hidden;
+    }
+}
+
+@keyframes cursorAnim1 {
+    from {
+        transform: scale(1) translate(-50%, -50%);
+    }
+    to {
+        transform: scale(0.9) translate(-55%, -55%);
+    }
+}
+
+@keyframes cursorAnim2 {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.9);
+    }
+}
+
+@keyframes cursorAnim3 {
+    0% {
+        transform: scale(1);
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        transform: scale(1.6) translate(-30%, -30%);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+@keyframes cursorHover {
+    0% {
+        transform: scale(1);
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: scale(1.4) translate(-30%, -30%);
+    }
+    // 100% {
+    //     transform: translate(-50%, -50%);
+    // }
+}

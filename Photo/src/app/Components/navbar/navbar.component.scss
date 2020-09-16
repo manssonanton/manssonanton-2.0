@@ -1,0 +1,417 @@
+#topNav {
+  padding-top: 0.5%;
+  padding-bottom: 3%;
+  height: 5%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  transition: 0.5s ease-in-out;
+}
+
+.hamburgerContainer {
+  float: right;
+  display: flex;
+  align-items: center;
+  height: 2.5vw;
+  margin-right: 5em;
+  justify-content: center;
+
+  .hamburger:hover #bar2 {
+    width: 28px;
+    transition: 250ms cubic-bezier(0.175, 0.885, 0.52, 1);
+  }
+  .hamburger:hover #bar3 {
+    width: 28px;
+    transition: 250ms cubic-bezier(0.175, 0.885, 0.52, 1);
+  }
+  .hamburger:hover {
+    opacity: 0.7;
+  }
+
+  .hamburger {
+    cursor: pointer;
+    width: 35px;
+    align-items: center;
+
+    #bar1 {
+      width: 28px;
+      height: 3px;
+      background-color: black;
+      margin: 3px 0;
+      transition: 0.4s;
+      border-radius: 1em;
+    }
+    #bar2 {
+      width: 20px;
+      height: 3px;
+      background-color: black;
+      margin: 3px 0;
+      transition: 0.4s;
+      border-radius: 1em;
+    }
+    #bar3 {
+      width: 15px;
+      height: 3px;
+      background-color: black;
+      margin: 3px 0;
+      transition: 0.4s;
+      border-radius: 1em;
+    }
+  }
+}
+
+#navDivName {
+  margin-left: 4em;
+  height: 3vw;
+  float: left;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+#NavSpanName {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.6em;
+  font-size: 0.9rem;
+  color: #131313;
+}
+#navDivName a {
+  text-decoration: none;
+  display: block;
+}
+
+#navMenuContainer {
+  background-color: #f1f1f1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  visibility: visible;
+  height: 100%;
+  position: fixed;
+  display: block;
+  z-index: 99;
+  border-bottom: solid 2px rgb(228, 228, 228);
+
+  .navMenu {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .navMenu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .activeCrossed {
+    position: relative;
+    font-size: 2.5vh;
+    color: #131313;
+    letter-spacing: 0.6em;
+    font-weight: 800;
+    font-family: "Montserrat", sans-serif;
+    padding: 2vh;
+    transition: 0.6s ease-in-out;
+  }
+  .activeCrossed:before,
+  .activeCrossed:after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    top: 50%;
+    margin-top: -0.5px;
+    background: rgb(22, 22, 22);
+  }
+  
+  .activeCrossed:before {
+    left: -5px;
+  }
+  .activeCrossed:after {
+    right: 5px;
+    background: rgb(17, 17, 17);
+    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  
+  .activeCrossed:hover:before {
+    background: rgb(20, 20, 20);
+    width: 100%;
+    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  
+  .activeCrossed:hover:after {
+    background: transparent;
+    width: 100%;
+    transition: 0s;
+  }
+  
+  .NavLink {
+    font-size: 1.5vh;
+    text-decoration: none;
+    color: #131313;
+    letter-spacing: 0.6em;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    padding: 2vh;
+    transition: 0.4s ease-in-out;
+    display: block;
+  }
+  .NavLinkSub {
+    font-size: 1.2vh;
+    text-decoration: none;
+    color: #131313;
+    letter-spacing: 0.4em;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    padding: 2vh;
+    margin-left: 4.5vh;
+    transition: 0.4s ease-in-out;
+    .activeCrossed{
+      font-size: 2vh;
+    }
+  }
+
+  .is-active {
+    .activeCrossed:before {
+      background: rgb(20, 20, 20);
+      width: 100%;
+      transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    
+    .activeCrossed:after {
+      background: transparent;
+      width: 100%;
+      transition: 0s;
+    }
+  }
+
+  .NavMenuHamburgerContainer {
+    position: absolute;
+    top: 1.2em;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-right: 5.5em;
+    justify-content: center;
+  }
+
+  .NavMenuhamburger:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+  .NavMenuhamburger:hover .x1 {
+    transform: translateY(0rem) rotate(-134deg);
+    transition: 300ms cubic-bezier(0.175, 0.485, 0.82, 1);
+  }
+  .NavMenuhamburger:hover .x3 {
+    transform: translateY(-0.6rem) rotate(134deg);
+    transition: 300ms cubic-bezier(0.175, 0.485, 0.82, 1);
+  }
+
+  .NavMenuhamburger {
+    transform: translateY(0.57rem);
+    height: 40px;
+    #cross1 {
+      width: 20px;
+      height: 3px;
+      background-color: black;
+      margin: 7px 0;
+      transition: 0.4s;
+      transform: translateY(0.043rem) rotate(134deg);
+    }
+    #cross2 {
+      width: 20px;
+      height: 3px;
+      background-color: black;
+      margin: 7px 0;
+      transition: 0.4s;
+      transform: translateY(-0.57rem) rotate(-134deg);
+    }
+  }
+}
+
+#leftNav {
+  visibility: hidden;
+  height: 100%; 
+  width: 5em; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  top: 0; /* Stay at the top */
+  left: 0;
+  overflow: hidden; /* Disable horizontal scroll */
+  z-index: 10000;
+  #bottom-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 4em;
+    color: black;
+    transform: rotate(-90deg);
+  }
+  .arrow-down {
+    animation: arrowDownanimation 0.5s infinite alternate;
+  }
+}
+
+#rightNav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 3em; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  top: 0; /* Stay at the top */
+  right: 0;
+  overflow: hidden; /* Disable horizontal scroll */
+  z-index: 10000;
+
+  #bottom-right {
+    position: absolute;
+    bottom: 4em;
+    display: block;
+    color: black;
+    transform: rotate(90deg);
+    margin: auto 0;
+    display: table;
+    visibility: hidden;
+    opacity: 0;
+    transition: 300ms cubic-bezier(0.175, 0.485, 0.82, 1);
+  }
+  .arrow-up {
+    animation: arrowUpanimation 1s infinite alternate;
+  }
+  #bottom-right:hover {
+    cursor: pointer;
+  }
+
+  .mediaSideNavLinks {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .socialMediaLogoSidenav {
+    width: 1em;
+    opacity: 1;
+    padding: 0.3em;
+  }
+  .socialMediaLogoSidenav:hover {
+    opacity: 1;
+    transform: scale(1.2) translate(0, -0.1em);
+    transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    // cursor: none;
+  }
+  .socialMediaLogoSidenav:not(hover) {
+    transition: 300ms ease-in;
+  }
+}
+
+.arrow-txt {
+  padding-left: 1em;
+  font-size: 0.5rem;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: #131313;
+  font-family: "Montserrat", sans-serif;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@keyframes arrowDownanimation {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(-3px);
+  }
+}
+@keyframes arrowUpanimation {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+@media screen and (max-width: 500px) {
+  #topNav {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: 0;
+    height: 4em;
+  }
+
+  .hamburgerContainer {
+    height: 3em;
+    margin-right: 2em;
+    .hamburger {
+      cursor: pointer;
+      width: 34px;
+      align-items: center;
+      #bar1 {
+        width: 28px;
+        height: 3px;
+        margin: 3px 0;
+      }
+      #bar2 {
+        width: 22px;
+        height: 3px;
+        margin: 3px 0;
+      }
+      #bar3 {
+        width: 15px;
+        height: 3px;
+        margin: 3px 0;
+      }
+    }
+  }
+  #navDivName {
+    height: 3em;
+    margin-left: 1em;
+  }
+  #NavSpanforeName {
+    // font-size: 8vw;
+    display: none;
+  }
+  #NavSpanName {
+    font-size: 3.6vw;
+  }
+
+  .navMenu a {
+    font-size: 1.1rem;
+  }
+  .navMenu li {
+    margin: 1em;
+  }
+  #navMenuContainer {
+    .NavLink {
+      font-size: 1rem;
+    }
+    .NavLinkSub {
+      font-size: 0.8rem;
+      font-weight: 400;
+      padding: 10px;
+    }
+
+    .navMenu li {
+      margin: 1em;
+    }
+    .NavMenuHamburgerContainer {
+      top: 1.5em;
+      margin-right: 3em;
+    }
+  }
+  .mediaSideNavLinks {
+    visibility: hidden;
+  }
+
+}
+
