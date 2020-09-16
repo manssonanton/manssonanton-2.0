@@ -1,9 +1,9 @@
 <section id="app">
-<div class="cursor" #cursor>+</div>
-<app-navbar></app-navbar>
-<div [@routeAnimations]="prepareRoute(outlet)">
-    <router-outlet #outlet="outlet"></router-outlet>
-</div>
-<!-- <app-landing-page></app-landing-page> -->
-<app-footer></app-footer>
+    <div class="cursor" #cursor></div>
+    <app-navbar></app-navbar>
+    <div [@routeAnimations]="o && o.activatedRouteData 
+      && o.activatedRouteData['animation']">
+        <router-outlet #o="outlet"></router-outlet>
+    </div>
+    <!-- <app-footer></app-footer> -->
 </section>

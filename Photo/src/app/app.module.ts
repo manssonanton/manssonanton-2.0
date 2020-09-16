@@ -1,34 +1,37 @@
-import { BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig } from '@angular/platform-browser';
+// Angular imports
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgxMasonryModule } from 'ngx-masonry';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PhotoService } from './photo.service';
-import { HttpReqInterceptor } from './http-req-interceptor';
 import { RouterModule } from '@angular/router';
-
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { FooterComponent } from './footer/footer.component';
-import { KyotoComponent } from './kyoto/kyoto.component';
-import { CarouselComponent } from './carousel/carousel.component';
-import { OsakaComponent } from './osaka/osaka.component';
-import { MalmoComponent } from './malmo/malmo.component';
-import { FeaturesComponent } from './features/features.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ModalComponent } from './modal/modal.component';
 
-export class HammerConfig extends HammerGestureConfig { // Needed to enable vertical scroll for some reason
-  overrides = <any>{
-    'pinch': { enable: false },
-    'rotate': { enable: false }
-  }
-}
+//Packages
+import { NgxMasonryModule } from 'ngx-masonry';
+
+// Components
+import { AppComponent } from './app.component';
+import { NavbarComponent } from '../app/Components/navbar/navbar.component';
+import { PortfolioComponent } from '../app/Components/portfolio/portfolio.component';
+import { HomeComponent } from '../app/Components/home/home.component';
+import { AboutComponent } from '../app/Components/about/about.component';
+import { FooterComponent } from '../app/Components/footer/footer.component';
+import { KyotoComponent } from '../app/Components/kyoto/kyoto.component';
+import { CarouselComponent } from '../app/Components/carousel/carousel.component';
+import { OsakaComponent } from '../app/Components/osaka/osaka.component';
+import { MalmoComponent } from '../app/Components/malmo/malmo.component';
+import { FeaturesComponent } from '../app/Components/features/features.component';
+import { PageNotFoundComponent } from '../app/Components/page-not-found/page-not-found.component';
+import { ModalComponent } from '../app/Components/modal/modal.component';
+
+// Services
+import { ProcessHTTPMsgService } from './Services/process-httpmsg.service';
+import { PhotoService } from '../app/Services/photo.service';
+import { HttpReqInterceptor } from '../app/Services/http-req-interceptor';
+
+//Routing
+import { AppRoutingModule } from './app-routing.module';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,7 @@ export class HammerConfig extends HammerGestureConfig { // Needed to enable vert
     FeaturesComponent,
     PageNotFoundComponent,
     ModalComponent,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
@@ -61,10 +65,7 @@ export class HammerConfig extends HammerGestureConfig { // Needed to enable vert
       multi: true
     },
     PhotoService,
-    {
-      provide: HAMMER_GESTURE_CONFIG,
-      useClass: HammerConfig
-    }
+    ProcessHTTPMsgService
   ],
   bootstrap: [AppComponent]
 })

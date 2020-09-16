@@ -1,0 +1,93 @@
+<section class="main-navigation">
+    <nav id="topNav">
+        <div id="navDivName">
+            <a routerLink="">
+                <span id="NavSpanName">MANSSON°</span>
+            </a>
+        </div>
+        <div class="hamburgerContainer">
+            <div class="hamburger" (click)="toggleMenu()">
+                <div id="bar1"></div>
+                <div id="bar2"></div>
+                <div id="bar3"></div>
+            </div>
+        </div>
+    </nav>
+</section>
+
+<section class="right-navigation">
+    <div id="rightNav">
+        <div>
+            <nav class="mediaSideNavLinks">
+                <a id="Facebook" href="https://www.facebook.com/anton.mansson.7?ref=bookmarks" target="_blank" rel="noopener">
+                    <!-- <img class="socialMediaLogoSidenav" src="../../assets/socialMedia/fb.png" alt="Facebook Logo"> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64h-64z"></path></svg>
+                </a>
+                <a id="Instagram" href="https://www.instagram.com/mansson_anton/" target="_blank" rel="noopener">
+                    <!-- <img class="socialMediaLogoSidenav" src="../../assets/socialMedia/insta.png" alt="Instagram Logo"> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M338,54.63H174c-62.72,0-114,51.32-114,114V343.33c0,62.72,51.32,114,114,114H338c62.72,0,114-51.32,114-114V168.67C452,105.94,400.68,54.63,338,54.63Zm83.91,288.71A84.24,84.24,0,0,1,338,427.24H174a84.24,84.24,0,0,1-83.91-83.91V168.67A84.24,84.24,0,0,1,174,84.76H338a84.24,84.24,0,0,1,83.91,83.91Z"></path><path d="M255.77,148.18A107.94,107.94,0,1,0,363.71,256.13,107.94,107.94,0,0,0,255.77,148.18Zm-.52,178.71a70.68,70.68,0,1,1,70.68-70.68A70.68,70.68,0,0,1,255.25,326.9Z"></path><circle cx="365.44" cy="146.5" r="25.56"></circle></svg>
+                </a>
+                <a id="LinkedIn" href="https://www.linkedin.com/in/anton-mansson/" target="_blank" rel="noopener">
+                    <img class="socialMediaLogoSidenav" src="../../assets/socialMedia/linkedin.png" alt="LinkedIn Logo">
+                </a>
+                <a id="Twitter" href="https://twitter.com/mansson_anton1" target="_blank" rel="noopener">
+                    <!-- <img class="socialMediaLogoSidenav" src="../../assets/socialMedia/twitter.png" alt="LinkedIn Logo"> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6-18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6.8 15 2.5 22.1-80.5-4-151.9-42.6-199.6-101.3-8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7-16-.4-31-4.8-44-12.1v1.2c0 47 33.4 86.1 77.7 95-8.1 2.2-16.7 3.4-25.5 3.4-6.2 0-12.3-.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3-33.1 26-74.9 41.5-120.3 41.5-7.8 0-15.5-.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-.1-8.4-.3-12.5C462.6 146 479 129 492 109.5z"></path></svg>
+                </a>
+            </nav>
+        </div>
+        <div id="bottom-right" (click)="scrollToTop()">
+            <i><svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 17 10">
+                    <path class="cls-1" d="M6.22,8.75,3.37,5.89H17V4.12H3.37L6.22,1.25,5,0,0,5l5,5Z"></path>
+                </svg></i>
+            <span class="arrow-txt">TOP</span>
+        </div>
+    </div>
+</section>
+
+<section class="left-navigation">
+    <div id="leftNav">
+        <div id="bottom-left">
+            <i><svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 17 10" class="arrow-down">
+                    <path class="cls-1" d="M6.22,8.75,3.37,5.89H17V4.12H3.37L6.22,1.25,5,0,0,5l5,5Z"></path>
+                </svg></i>
+            <span class="arrow-txt">SCROLL</span>
+        </div>
+    </div>
+</section>
+<div id="navMenuContainer" (click)="isToggled">
+    <!-- [@test]="isToggled"> -->
+    <div class="NavMenuHamburgerContainer">
+        <div class="NavMenuhamburger" (click)="toggleMenu()">
+            <div id="cross1"></div>
+            <div id="cross2"></div>
+        </div>
+    </div>
+    <nav class="navMenu">
+        <ul class="menuList">
+            <li><a (click)="toggleMenu()" routerLink="" routerLinkActive="is-active" class="NavLink"
+                    [routerLinkActiveOptions]="{ exact: true }"> 01 /<span class="activeCrossed">HOME</span>
+                    <!-- <span class="activeCrossed"></span> -->
+                </a>
+            </li>
+            <li>
+                <a (click)="toggleMenu()" routerLink="portfolio" routerLinkActive="is-active" class="NavLink">02 /<span class="activeCrossed">PORTFOLIO</span>
+                </a>
+            </li>
+            <li>
+                <a (click)="toggleMenu()" routerLink="features" routerLinkActive="is-active" class="NavLink">03 /<span class="activeCrossed">FEATURES</span>
+                </a>
+            </li>
+            <li>
+                <a (click)="toggleMenu()" routerLink="features/kyoto" routerLinkActive="is-active"
+                    class="NavLink NavLinkSub"> / 01 
+                    <span class="activeCrossed">KYOTO</span>
+                </a>
+            </li>
+            <li>
+                <a (click)="toggleMenu()" routerLink="about" routerLinkActive="is-active" class="NavLink">04 /<span class="activeCrossed">ABOUT</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
