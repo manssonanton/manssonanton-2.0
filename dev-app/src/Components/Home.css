@@ -1,57 +1,76 @@
-.home{
+.home {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin: 0 auto;
+    justify-content: center;
+    transform: translateY(-8vh);
+    z-index: 1;
+}
+.background-image {
+    position: absolute;
+    transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg); /* IE 9 */
+    -webkit-transform: skewX(-20deg); /* Safari and Chrome */
+    display: flex;
+    height: 100%;
+    width: 100%;
     margin: 0 auto;
     justify-content: center;
     background-image: url(../Assets/svg\ 1.svg);
-    background-size:100% 100%;
-    -o-background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    background-size:cover;
-    transform: translateY(-8vh);
+    /* animation: animatedBackground 20s ease infinite alternate; */
+    background-size: 95%;
+    background-position: 0px 0px;
+    background-repeat: repeat;
+    z-index: -1;
 }
-.about{
+
+.contact {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0 auto;
     justify-content: center;
 }
-.contact{
+.projects {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0 auto;
     justify-content: center;
 }
-.projects{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0 auto;
-    justify-content: center;
+.content-container {
+    margin-left: 10%;
 }
-h3{
-    font-size: 6rem;
-    font-family: 'IBM Plex Mono', monospace;
+h3 {
+    font-size: 5rem;
+    font-family: "IBM Plex Mono", monospace;
     color: #b1b1b1;
 }
-h4{
+h4 {
     /* font-family: 'VT323', monospace; */
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 2rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1.7rem;
     font-weight: 500;
     color: #31dd48;
 }
-h2{
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 7rem;
+h2 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 6rem;
 }
-p{
+p {
     padding-top: 2rem;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 1.7rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1.5rem;
     max-width: 50%;
     line-height: 1.8;
+}
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 115%;
+    }
 }

@@ -11,16 +11,16 @@ function App() {
     <div className="App">
       <Nav />
       <div className="container">
-        <div className="1">
+        <div className="c1">
           <Home />
         </div>
-        <div className="2">
+        <div className="c2">
           <About />
         </div>
-        <div className="3">
+        <div className="c3">
           <Projects />
         </div>
-        <div className="4">
+        <div className="c4">
           <Contact />
         </div>
       </div>

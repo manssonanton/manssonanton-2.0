@@ -1,4 +1,6 @@
 .nav-container {
+    z-index: 2;
+    position: relative;
 }
 nav {
     width: 90%;
@@ -69,24 +71,29 @@ a{
 }
 .active{
      color: #31dd48;
+     fill: #31dd48;
      text-decoration: line-through;
+    
+}
+.active svg{
+    opacity: 1;
+    fill: #31dd48;
+    transform: scale(1.2) translate(0, -0.1em);
 }
 
 .mediaSideNavLinks {
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 0;
     display: flex;
     flex-direction: column;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
     align-items: center;
     text-align: center;
     justify-content: center;
 }
 .socialMediaLogoSidenav {
     opacity: 0.5;
-    padding: 1em;
+    padding: 1.5em;
 }
 svg{
     fill: #e7e7e7;
@@ -98,4 +105,54 @@ svg{
 }
 .socialMediaLogoSidenav:not(hover) {
     transition: 300ms ease-in;
+}
+.side-nav{
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    list-style: none;
+    opacity: 0.5;
+    
+}
+li{
+    padding: 1.5em;
+}
+
+.side-nav-link{
+    transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.side-nav-link svg:hover{
+    fill: #31dd48;
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1.2) translate(0, -0.1em);
+    transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.line{
+    background-color: #e7e7e7;
+    opacity: 0.5;
+    width: 1px;
+    /* max-height: 40vh; */
+    min-height: 40vh;
+}
+
+.link-line{
+    position: relative;
+    background-color: #e7e7e7;
+    opacity: 0.5;
+    width: 3px;
+    height: 10vh;
+}
+.link-number{
+    font-size: 1rem;
+    border: solid 1px;
+    padding: 1rem;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
 }
