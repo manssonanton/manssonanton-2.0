@@ -4,9 +4,9 @@
         sort
       </span><span id="change-sort">LATEST</span></span>
   </div>
-  <div id="masonry" @animation>
-    <ngx-masonry [options]="myOptions">
-      <div ngxMasonryItem class="masonry-item" *ngFor="let item of viewPhotoUrls">
+  <div id="masonry">
+    <ngx-masonry [options]="myOptions" >
+      <div ngxMasonryItem class="masonry-item" *ngFor="let item of viewPhotoUrls" >
         <img (click)="openModal($event)" [src]=item.Url alt="...">
       </div>
     </ngx-masonry>

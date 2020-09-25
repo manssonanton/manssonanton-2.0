@@ -1,33 +1,23 @@
 .cursor {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3rem;
+    height: 3rem;
     border: 0.5px solid rgba(53, 53, 53, 0.473);
     z-index: 1000;
     border-radius: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    // cursor: none;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // font-size: 2rem;
-    // font-weight: 200;
-    // font-family: "Montserrat", sans-serif;
-    // color: rgba(19, 19, 19, 0.473);
-    // transition: all 0.2s ease;
     transition-duration: 100ms;
     transition-timing-function: ease-out;
     transform: translateZ(100% 100%);
     transition-property: width, height, border, font-size, color, transform;
-    // transform-origin: 100% 100%;
     animation: cursorAnim1 0.5s infinite alternate;
 }
 
 .cursor::after{
     content: "";
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3rem;
+    height: 3rem;
     border: 5px solid rgba(148, 148, 148, 0.473);
     z-index: 1000;
     border-radius: 50%;

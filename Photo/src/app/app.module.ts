@@ -32,6 +32,7 @@ import { HttpReqInterceptor } from '../app/Services/http-req-interceptor';
 //Routing
 import { AppRoutingModule } from './app-routing.module';
 import { HighlightDirective } from './directives/highlight.directive';
+import { AppearDirective } from './directives/appear.directive';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     PageNotFoundComponent,
     ModalComponent,
     HighlightDirective,
+    AppearDirective,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     HttpClientModule,
     RouterModule,
     BrowserAnimationsModule
-  ],
+    ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

@@ -1,13 +1,40 @@
 <section>
-    <div class="home-container" @slideAnimation>
-        <div class="header-text">
-            <h1>PHOTOGRAPHY HELPS PEOPLE TO SEE.</h1>
+    <div class="home-container">
+        <div class="header-text ">
+            <h1 #firstHeader [@showElement]="firstHeaderState">PHOTOGRAPHY.</h1>
+            <div  class="scrollDown">
+                <a (click)="toCenterImg()"><svg class="animate__animated animate__pulse animate__infinite	infinite" width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
+                    fill-rule="evenodd" clip-rule="evenodd">
+                    <path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z" /></svg>
+                </a>
+            </div>
         </div>
         <div class="center-image">
-            <img src="../../assets/Pictures/Home/Mountain2.jpg" alt="...">
+            <img #centerImg src="../../assets/Pictures/Home/DSC9999.jpg" alt="...">
+            <p #centerImgText class="image-text">Kings trail outside the cabins of Singi.</p>
+        </div>
+        <div class="header-text">
+            <h2 #quote>Photography helps people to see.</h2>
+            <h3 #quoteName>-Berenice Abbott</h3>
+        </div>
+        <div class="photo-grid">
+            <img #img1 src="../../assets/Pictures/Home/Mountain2.jpg" alt="...">
+            <img #img2 src="../../assets/Pictures/Home/DSC07378.jpg" alt="...">
+        </div>
+        <div class="header-text">
+            <h1 #secHeader>BIG IN JAPAN.</h1>
+        </div>
+        <div class="photo-grid">
+            <img #img1 src="../../assets/Pictures/Home/DSC02106.jpg" alt="...">
+            <img #img2 src="../../assets/Pictures/Home/DSC02961.jpg" alt="...">
+        </div>
+        <div class="photo-grid">
+            <img #img1 src="../../assets/Pictures/Home/DSC03786.jpg" alt="...">
+            <img #img2 src="../../assets/Pictures/Home/DSC03877.jpg" alt="...">
         </div>
         <!-- <a routerLink="portfolio">PORTFOLIO <span class="material-icons">
                 arrow_right_alt
             </span></a> -->
+        <!-- (appear)="onAppear()" [hidden]="!hasAppeared" -->
     </div>
 </section>

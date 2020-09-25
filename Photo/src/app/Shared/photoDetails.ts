@@ -1,4 +1,4 @@
 export interface photoDetails {
     Url: string;
-    Date: Date;
+    Date?: Date;
   }
