@@ -10,7 +10,7 @@
 .grid-sizer,
 .masonry-item {
   width: 30%;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 
   img {
     width: 100%;
@@ -57,6 +57,7 @@ img:hover {
   overflow: hidden;
   z-index: 9999999;
   pointer-events: none;
+  transition: all 0.4s ease-in-out;
   img:hover {
     cursor: initial;
     filter: none;

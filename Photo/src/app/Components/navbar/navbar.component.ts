@@ -1,31 +1,15 @@
-import { Component, OnInit, HostListener, ViewChild, AfterViewInit } from '@angular/core';
-import { useAnimation, trigger, transition, state, style, animate } from '@angular/animations';
-import { scaleIn, scaleOut } from '../../Animations/carousel.animations';
+import { Component, OnInit, HostListener } from '@angular/core';
 import {
   gsap,
-  CSSPlugin,
-  TweenMax,
-  TimelineMax,
-  Linear
+  TimelineMax
 } from "gsap/all";
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  // animations: [
-  //   trigger('test', [
-  //       state('true', style({ transform: "translate(0px, -100%)", overflow: "hidden" })),
-  //       state('false', style({ transform: "translate(0px, 0px)"
-  //       ,overflow: "visible"})),
-  //       transition('1 => 0', animate("0.5s ease-in-out")),
-  //       transition('0 => 1', animate("0.3s ease-in-out"))
-  //   ])
-  // ]
 })
 export class NavbarComponent implements OnInit {
-  // @HostListener('window:scroll', ['$event']) // for window scroll events
-  // @ViewChild('NavLink') NavLink: HTMLElement;
   prevScrollpos = window.pageYOffset;
   isToggled: Boolean;
   tl = new TimelineMax({ delay: 1, paused: true, reversed: true });
@@ -46,19 +30,18 @@ export class NavbarComponent implements OnInit {
     var menu = document.getElementById('navMenuContainer');
     var cross1 = document.getElementById('cross1');
     var cross2 = document.getElementById('cross2');
-    this.tl.fromTo(bar1, 0.1, { transform: "translate(0px, 0px)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, -300px)", overflow: "hidden", opacity: "0" })
-    this.tl.fromTo(bar2, 0.1, { transform: "translate(0px, 0px)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, -300px)", overflow: "hidden", opacity: "0" })
-    this.tl.fromTo(bar3, 0.1, { transform: "translate(0px, 0px)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, -300px)", overflow: "hidden", opacity: "0" })
-    this.tl.fromTo(navDivName, 0.3, { transform: "translate(0px, 0px)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, -300px)", overflow: "hidden", opacity: "0" }, "-=0.2")
+    this.tl.fromTo(bar1, 0.1, { transform: "translate(0px, 0px)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, -200px)", overflow: "hidden", opacity: "0" })
+    this.tl.fromTo(bar2, 0.1, { transform: "translate(0px, 0px)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, -200px)", overflow: "hidden", opacity: "0" })
+    this.tl.fromTo(bar3, 0.1, { transform: "translate(0px, 0px)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, -200px)", overflow: "hidden", opacity: "0" })
+    this.tl.fromTo(navDivName, 0.2, { transform: "translate(0px, 0px)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, -200px)", overflow: "hidden", opacity: "0" }, "-=0.2")
     this.tl.fromTo(topNav, 0.1, { transform: "translate(0px, 0px)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, -300px)", overflow: "hidden", opacity: "0" }, "-=0.2")
-    this.tl.fromTo(bottomLeft, 0.3, { transform: "translate(0px, 0px) rotate(-90deg)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, 300px) rotate(-90deg)", overflow: "hidden", opacity: "0" }, "-=0.2")
-    this.tl.fromTo(bottomRight, 0.3, { transform: "translate(0px, 0px) rotate(90deg)", overflow: "hidden", opacity: "1" }, { transform: "translate( 0px, 300px) rotate(90deg)", overflow: "hidden", opacity: "0" }, "-=0.3")
-    this.tl.fromTo(menu, 0.4, { transform: "translate(0px, -100%)", overflow: "hidden", visibility: "hidden" }, { transform: "translate(0px, 0px)", overflow: "visible", visibility: "Visible" }, "+=0")
-    this.tl.fromTo(cross1, 0.3, { opacity: "0" }, { transform: "translateY(0.043rem) rotate(134deg)", opacity: "1" }, "+=0")
-    this.tl.fromTo(cross2, 0.3, { opacity: "0" }, { transform: "translateY(-0.57rem) rotate(-134deg)", opacity: "1" })
+    this.tl.fromTo(bottomLeft, 0.2, { transform: "translate(0px, 0px) rotate(-90deg)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, 300px) rotate(-90deg)", overflow: "hidden", opacity: "0" }, "-=0.2")
+    this.tl.fromTo(bottomRight, 0.2, { transform: "translate(0px, 0px) rotate(90deg)", overflow: "hidden", opacity: "1" }, { transform: "translate( 0px, 300px) rotate(90deg)", overflow: "hidden", opacity: "0" }, "-=0.3")
+    this.tl.fromTo(menu, 0.3, { transform: "translate(0px, -100%)", overflow: "hidden", visibility: "hidden" }, { transform: "translate(0px, 0px)", overflow: "visible", visibility: "Visible" }, "+=0")
+    this.tl.fromTo(cross1, 0.2, { opacity: "0" }, { transform: "translateY(0.043rem) rotate(134deg)", opacity: "1" }, "+=0")
+    this.tl.fromTo(cross2, 0.2, { opacity: "0" }, { transform: "translateY(-0.57rem) rotate(-134deg)", opacity: "1" })
     Array.from(nalinks).forEach((el) => {
-      // this.tl.fromTo(el, 0.1, { opacity: "0", width: "30%" }, { opacity: "1", width: "100%" });
-      this.tl.fromTo(el, 0.3, { opacity: "0", transform: "translateY( 100vh)" }, { opacity: "1", transform: "translateY( 0px)" }, "-=0.2");
+      this.tl.fromTo(el, 0.2, { opacity: "0", transform: "translateY( 100vh)" }, { opacity: "1", transform: "translateY( 0px)" }, "-=0.1");
     });
   }
 

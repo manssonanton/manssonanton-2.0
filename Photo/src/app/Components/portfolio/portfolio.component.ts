@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { PhotoService } from '../../Services/photo.service';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
-import { useAnimation, trigger, transition } from '@angular/animations';
+import { useAnimation, trigger, transition, style, animate } from '@angular/animations';
 import { scaleIn, scaleOut } from '../../Animations/carousel.animations';
 import { photoDetails } from '../../Shared/photoDetails'
 
@@ -13,7 +13,7 @@ import { photoDetails } from '../../Shared/photoDetails'
     trigger("animation", [
       transition("void => *", [useAnimation(scaleIn, { params: { time: '700ms' } })]),
       transition("* => void", [useAnimation(scaleOut, { params: { time: '500ms' } })]),
-    ])
+    ]),
   ]
 })
 export class PortfolioComponent implements OnInit {
@@ -22,13 +22,23 @@ export class PortfolioComponent implements OnInit {
 
   myOptions: NgxMasonryOptions = {
     percentPosition: true,
-    gutter: 100
+    gutter: 50,
   };
-
+  animations = {
+    show: [
+      style({ opacity: 0 }),
+      animate('400ms ease-in', style({ opacity: 1 })),
+    ],
+    hide: [
+      style({ opacity: '*' }),
+      animate('400ms ease-in', style({ opacity: 0 })),
+    ]
+  }
+  limit: number = 15;
   page: number = 0;
   viewPhotoUrls: photoDetails[] = [];
   photoUrls: string[] = [];
-  photoDetails: photoDetails[] = []
+  photoDetails: photoDetails[] = [];
   errMsg: string;
 
   constructor(
@@ -77,7 +87,6 @@ export class PortfolioComponent implements OnInit {
   openModal(ev) {
     const original = document.querySelector(".full-img") as HTMLImageElement;
     const modal = document.querySelector(".modal") as HTMLElement;
-    // modal.classList.add(".modal.open");
     original.src = ev.target.src;
     modal.style.opacity = "1";
     modal.style.pointerEvents = "All";
@@ -105,4 +114,5 @@ export class PortfolioComponent implements OnInit {
     }
     this.page++
   }
+
 }
