@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { PhotoService } from '../../Services/photo.service';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { useAnimation, trigger, transition, style, animate } from '@angular/animations';
 import { scaleIn, scaleOut } from '../../Animations/carousel.animations';
 import { photoDetails } from '../../Shared/photoDetails'
+import { AnimationService } from '../../Services/animation.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -41,14 +42,21 @@ export class PortfolioComponent implements OnInit {
   photoDetails: photoDetails[] = [];
   errMsg: string;
 
+  // @ViewChildren('fade') elementArrayFade;
+
   constructor(
     private photoService: PhotoService,
+    // private animationService: AnimationService,
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.requestPhotos();
   }
-
+  ngAfterViewInit(): void {
+    // setTimeout(() => {
+    //   this.checkScroll()
+    // }, 100);
+  }
   requestPhotos() {
     this.photoService.getPhotos()
       .subscribe(res => {
@@ -115,4 +123,14 @@ export class PortfolioComponent implements OnInit {
     this.page++
   }
 
+  // @HostListener('window:scroll', ['$event'])
+  // checkScroll() {
+  //   this.elementArrayFade.forEach(element => {
+  //     const componentPosition = element.nativeElement.offsetTop
+  //     const scrollPosition = window.pageYOffset
+  //     if (scrollPosition > componentPosition - window.innerHeight + 200) {
+  //       this.animationService.fadeInAnimation(element);
+  //     }
+  //   });
+  // }
 }

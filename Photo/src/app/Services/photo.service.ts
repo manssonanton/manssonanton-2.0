@@ -31,23 +31,23 @@ export class PhotoService {
     return this.http.get("https://manssonanton.com/pictures/kyoto/photolistKyoto.php")
   }
 
-  public getOsakaPhotos() {
-    return this.http.get("https://manssonanton.com/pictures/osaka/photolistOsaka.php")
-  }
+  // public getOsakaPhotos() {
+  //   return this.http.get("https://manssonanton.com/pictures/osaka/photolistOsaka.php")
+  // }
 
-  public getNisekoPhotos() {
-    return this.http.get("https://manssonanton.com/pictures/niseko/photolistNiseko.php")
-  }
+  // public getNisekoPhotos() {
+  //   return this.http.get("https://manssonanton.com/pictures/niseko/photolistNiseko.php")
+  // }
 
-  public getTokyoPhotos() {
-    return this.http.get("https://manssonanton.com/pictures/tokyo/photolistTokyo.php")
-  }
+  // public getTokyoPhotos() {
+  //   return this.http.get("https://manssonanton.com/pictures/tokyo/photolistTokyo.php")
+  // }
 
-  public getMalmoPhotos() {
-    return this.http.get("https://manssonanton.com/pictures/malmo/photolistMalmo.php")
-  }
+  // public getMalmoPhotos() {
+  //   return this.http.get("https://manssonanton.com/pictures/malmo/photolistMalmo.php")
+  // }
 
-  public getHomePhotos() {
-    return this.http.get("https://manssonanton.com/pictures/home/photolistHome.php")
-  }
+  // public getHomePhotos() {
+  //   return this.http.get("https://manssonanton.com/pictures/home/photolistHome.php")
+  // }
 }

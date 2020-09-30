@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { trigger, useAnimation, transition, query, style, group, animate } from '@angular/animations';
-import { scaleIn, scaleOut, routeFadeAnimation, resetRoute } from '../../Animations/carousel.animations';
+import { AfterViewInit, Component, HostListener, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { trigger, transition, query, style, group, animate } from '@angular/animations';
+import { resetRoute } from '../../Animations/carousel.animations';
+import { AnimationService } from '../../Services/animation.service';
 
 @Component({
   selector: 'app-about',
@@ -29,11 +30,49 @@ import { scaleIn, scaleOut, routeFadeAnimation, resetRoute } from '../../Animati
     ])
   ]
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent implements OnInit, AfterViewInit {
+  @ViewChild('aboutText') aboutText;
+  @ViewChildren('aboutHeader,img1') elementArrayFromLeft;
+  @ViewChildren('img2,articleText') elementArrayFromRight;
+  @ViewChildren('nameHeader,nameSubHeader,scrollClick') elementArrayFade;
 
-  constructor() { }
+  constructor(private animationService: AnimationService) { }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.checkScroll()
+    }, 100);
+  }
 
   ngOnInit(): void {
   }
 
+  scrollDown() {
+    this.animationService.scollToTopElement(this.aboutText)
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {
+    this.elementArrayFromLeft.forEach(element => {
+      const componentPosition = element.nativeElement.offsetTop;
+      const scrollPosition = window.pageYOffset;
+      if (scrollPosition > componentPosition - window.innerHeight) {
+        this.animationService.backInLeftAnimation(element);
+      }
+    });
+    this.elementArrayFromRight.forEach(element => {
+      const componentPosition = element.nativeElement.offsetTop
+      const scrollPosition = window.pageYOffset
+      if (scrollPosition > componentPosition - window.innerHeight) {
+        this.animationService.backInRightAnimation(element);
+      }
+    });
+    this.elementArrayFade.forEach(element => {
+      const componentPosition = element.nativeElement.offsetTop
+      const scrollPosition = window.pageYOffset
+      if (scrollPosition > componentPosition - window.innerHeight) {
+        this.animationService.fadeInUpAnimation(element);
+      }
+    });
+  }
 }

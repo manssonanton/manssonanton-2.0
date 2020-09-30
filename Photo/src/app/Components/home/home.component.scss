@@ -1,17 +1,6 @@
-@font-face {
-  font-family: "Emberly";
-  src: url("../../../assets/Fonts/Emberly-ExtraLight.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Noah";
-  src: url("../../../assets/Fonts/Noah-Bold.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
+
 .animate__animated.animate__backInLeft {
-  --animate-duration: 1.2s;
+  --animate-duration: 1s;
 }
 .animate__animated.animate__fadeInUp {
   --animate-duration: 1.2s;
@@ -40,9 +29,9 @@ section {
       // font-family: "Emberly", sans-serif;
       font-family: "Montserrat", sans-serif;
       text-align: center;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      font-size: clamp(1.5rem, 7vw, 20rem);
+      font-weight: 200;
+      letter-spacing: 0.4em;
+      font-size: clamp(1.5rem, 5vw, 20rem);
       color: #181717;
       margin: 0;
     }
@@ -71,8 +60,8 @@ section {
       transform: translateY(35vh);
       text-align: center;
       svg {
-        width: 100px;
-        height: 100px;
+        width: 30px;
+        height: 30px;
         &:hover {
           cursor: pointer;
         }
@@ -121,32 +110,45 @@ section {
 }
 @media screen and (max-width: 500px) {
   .home-container {
-    margin-top: 4rem;
+    margin-top: 5vh;
     max-height: none;
     display: grid;
     justify-content: center;
-    grid-template-rows: 1.5fr 1fr 1fr 1fr;
+    grid-template-rows: 100vh 100vh 100vh 1fr;
     align-items: center;
     align-self: center;
 
     .header-text {
       align-items: center;
       h1 {
-        font-size: clamp(1.7rem, 10vw, 3rem);
+        font-size: clamp(1.5rem, 7vw, 3rem);
       }
-    }
-    a {
-      padding-right: 0;
-      text-align: center;
-      font-weight: 800;
-      font-size: 2rem;
-      .material-icons {
-        font-size: 1rem;
+      .scrollDown {
+        svg {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
 
     .center-image {
       max-width: 100%;
+      .image-text {
+        text-align: center;
+        font-size: clamp(1rem, 1vw, 3rem);
+      }
     }
+
+    .photo-grid {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      align-self: center;
+      img {
+        width: 100%;
+        margin: clamp(0.8rem, 3%, 3rem);
+      }
   }
+}
 }

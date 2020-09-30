@@ -1,121 +1,141 @@
-@font-face {
-  font-family: "Emberly";
-  src: url("../../../assets/Fonts/Emberly-ExtraBold.ttf");
-  font-weight: normal;
-  font-style: normal;
+.animate__animated.animate__backInLeft {
+  --animate-duration: 1s;
 }
-.about{
-  height: 100vh;
-  vertical-align: middle;
+.animate__animated.animate__fadeInUp {
+  --animate-duration: 1.2s;
 }
-.flex-container {
-  // padding-top: 6%;
-  margin: auto;
-  vertical-align: middle;
-  justify-content: center;
-  width: 70%;
-  height: 90vh;
-}
-.article {
+section {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 5em;
+  justify-content: center;
+}
+.home-container {
+  // margin-top: 5vh;
+  display: grid;
+  width: 80%;
+  justify-content: center;
+  grid-template-rows: 100vh 100vh;
   align-items: center;
 
-  height: 100%;
-
-  .article-flex {
-    max-width: 50%;
-    .text-container{
-      border-top: solid 5px #f7f7f7;
-      border-bottom: solid 5px #f7f7f7;
-      padding: 3rem 3rem;
+  .header-text {
+    margin: 0 auto;
+    width: 100%;
+    h1 {
+      font-family: "Montserrat", sans-serif;
+      text-align: center;
+      font-weight: 300;
+      letter-spacing: 0.4em;
+      font-size: clamp(1.5rem, 4vw, 20rem);
+      color: #181717;
+      margin: 0;
     }
-  }
-  .article-flex-img {
-    max-width: 50%;
-  }
-  .flex-img {
-    max-width: 70%;
-  }
-  h1 {
-    font-family: "Montserrat", sans-serif;
-    vertical-align: middle;
-    letter-spacing: 0.1em;
     .bold-text {
-      font-weight: 500;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 1vw, 3rem);
     }
-    .cursive-text {
-      font-size: 1rem;
+    h3 {
+      font-family: "Montserrat", sans-serif;
+      text-align: center;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      font-size: clamp(1.5rem, 1.2vw, 3rem);
+      color: #181717;
+      margin: 1vh;
+    }
+
+    .scrollDown {
+      transform: translateY(35vh);
+      text-align: center;
+      svg {
+        width: 30px;
+        height: 30px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
   }
-  .art-header-light {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 200;
-    font-size: 2rem;
-    margin: 0;
-  }
-  .art-header-bold {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 300;
-    font-size: 10vh;
-    margin: 0;
-  }
-  .article-text {
-    margin-top: 4%;
-    font-family: "Noto Sans JP", sans-serif;
-    width: 80%;
-    font-weight: 200;
-    font-size: 14px;
-    letter-spacing: 0.1em;
-    line-height: 2;
+}
+.article-text {
+  margin: 0 auto;
+  font-family: "Noto Sans JP", sans-serif;
+  width: 80%;
+  font-weight: 200;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  line-height: 2;
+}
+.about-header {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-size: clamp(1.5rem, 3vw, 6rem);
+  color: #181717;
+  padding: 6vh;
+  display: block;
+}
+.photo-grid {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  img {
+    width: 20%;
+    margin: clamp(0.8rem, 5%, 3rem);
   }
 }
 
 @media screen and (max-width: 500px) {
-  .flex-container {
-    margin-top: 3em;
-    width: 90%;
-  }
-  .article {
-    display: block;
-    height: 100%;
+  .home-container {
+    margin-top: 5vh;
+    max-height: none;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 95vh 1fr;
+    align-items: center;
+    align-self: center;
 
-    .article-flex {
-      max-width: 100%;
-      border: none;
-      .text-container {
-        padding-top: 2%;
+    .header-text {
+      align-items: center;
+      h1 {
+        font-size: clamp(1.7rem, 10vw, 3rem);
       }
-    }
-    .article-flex-img {
-      max-width: 100%;
-    }
-    .flex-img {
-      max-width: 100%;
-    }
-    h1 {
-      text-align: center;
-
+      .scrollDown {
+        transform: translateY(25vh);
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      h3 {
+        font-size: clamp(1.1rem, 1.2vw, 3rem);
+        margin: 2vh;
+      }
       .bold-text {
-        font-weight: 800;
-      }
-      .cursive-text {
-        font-size: 1.5rem;
+        font-size: clamp(0.9rem, 0.8vw, 3rem);
       }
     }
-    .art-header-light {
-      font-size: 2.5rem;
-      text-align: center;
+
+    .photo-grid {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      align-self: center;
+      img {
+        width: 100%;
+        margin: clamp(0.8rem, 3%, 3rem);
+      }
     }
-    .art-header-bold {
-      font-size: 6rem;
-      text-align: center;
-    }
-    .article-text {
-      width: 100%;
-      font-size: 13px;
-    }
+  }
+  .article-text {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    line-height: 2;
+  }
+  .about-header {
+    font-size: clamp(2rem, 3vw, 6rem);
+    padding: 1vh;
+    padding-bottom: 3vh;
   }
 }
