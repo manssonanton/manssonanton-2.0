@@ -1,4 +1,3 @@
-
 .animate__animated.animate__backInLeft {
   --animate-duration: 1s;
 }
@@ -26,45 +25,61 @@ section {
     margin: 0 auto;
     width: 100%;
     h1 {
-      // font-family: "Emberly", sans-serif;
+      -webkit-transform: translate3d(0, 0, 0) !important;
+      transform: translate3d(0, 0, 0) !important;
       font-family: "Montserrat", sans-serif;
       text-align: center;
       font-weight: 200;
       letter-spacing: 0.4em;
-      font-size: clamp(1.5rem, 5vw, 20rem);
+      font-size: clamp(1.5rem, 6vw, 20rem);
       color: #181717;
       margin: 0;
+      h3 {
+        font-family: "Montserrat", sans-serif;
+        text-align: center;
+        font-weight: 300;
+        letter-spacing: 0.2em;
+        font-size: clamp(2rem, 1.3vw, 3rem);
+        color: #181717;
+        margin: 1vh;
+      }
     }
     h2 {
-      // font-family: "Emberly", sans-serif;
       font-family: "Montserrat", sans-serif;
       text-align: center;
       font-weight: 500;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.2em;
       font-size: clamp(1.5rem, 2vw, 3rem);
       color: #181717;
       margin: 1vh;
       font-style: italic;
     }
     h3 {
-      // font-family: "Emberly", sans-serif;
       font-family: "Montserrat", sans-serif;
       text-align: center;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      font-size: clamp(1.5rem, 1.5vw, 3rem);
+      font-weight: 200;
+      letter-spacing: 0.2em;
+      font-size: clamp(1.3rem, 1.2vw, 3rem);
       color: #181717;
       margin: 1vh;
     }
     .scrollDown {
       transform: translateY(35vh);
-      text-align: center;
-      svg {
-        width: 30px;
-        height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      a {
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        font-size: clamp(1.5rem, 1vw, 3rem);
+        color: #181717;
         &:hover {
           cursor: pointer;
         }
+      }
+      svg {
+        width: 30px;
+        height: 30px;
       }
     }
   }
@@ -82,10 +97,12 @@ section {
   }
 
   .center-image {
-    max-width: 100%;
+    max-width: 85%;
     margin: 0 auto;
+    max-height: 80%;
     img {
-      width: 100%;
+      max-width: 100%;
+      max-height: 80%;
     }
     .image-text {
       font-family: "Montserrat", sans-serif;
@@ -121,9 +138,20 @@ section {
     .header-text {
       align-items: center;
       h1 {
+        font-weight: 500;
         font-size: clamp(1.5rem, 7vw, 3rem);
+        h3 {
+          font-weight: 300;
+          font-size: clamp(1.2rem, 1.3vw, 3rem);
+        }
       }
+
       .scrollDown {
+        transform: translateY(29vh);
+        a {
+          font-weight: 300;
+          font-size: clamp(1.2rem, 2.3vw, 3rem);
+        }
         svg {
           width: 20px;
           height: 20px;
@@ -149,6 +177,6 @@ section {
         width: 100%;
         margin: clamp(0.8rem, 3%, 3rem);
       }
+    }
   }
-}
 }

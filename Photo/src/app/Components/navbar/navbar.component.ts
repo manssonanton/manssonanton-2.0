@@ -40,12 +40,12 @@ export class NavbarComponent implements OnInit {
     this.tl.fromTo(topNav, 0.1, { transform: "translate(0px, 0px)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, -300px)", overflow: "hidden", opacity: "0" }, "-=0.2")
     // this.tl.fromTo(bottomLeft, 0.2, { transform: "translate(0px, 0px) rotate(-90deg)", overflow: "visible", opacity: "1" }, { transform: "translate( 0px, 300px) rotate(-90deg)", overflow: "hidden", opacity: "0" }, "-=0.2")
     // this.tl.fromTo(bottomRight, 0.2, { transform: "translate(0px, 0px) rotate(90deg)", overflow: "hidden", opacity: "1" }, { transform: "translate( 0px, 300px) rotate(90deg)", overflow: "hidden", opacity: "0" }, "-=0.3")
-    this.tl.fromTo(menu, 0.4, { transform: "translate(0px, -100%)", overflow: "hidden", visibility: "hidden" }, { transform: "translate(0px, 0px)", overflow: "visible", visibility: "Visible" }, "0")
+    this.tl.fromTo(menu, 0.6, { transform: "translate(0px, -100%)", overflow: "hidden", visibility: "hidden" }, { transform: "translate(0px, 0px)", overflow: "visible", visibility: "Visible" }, "0")
     // this.tl.fromTo(cross1, 0.2, { opacity: "0" }, { transform: "translateY(0.043rem) rotate(134deg)", opacity: "1" }, "+=0")
     // this.tl.fromTo(cross2, 0.2, { opacity: "0" }, { transform: "translateY(-0.57rem) rotate(-134deg)", opacity: "1" })
     // this.tl.delay(2)
     Array.from(navlinks).forEach((el) => {
-      this.tl.fromTo(el, 0.2, { opacity: "0", transform: "translateY( -100vh)" }, { opacity: "1", transform: "translateY( 0px)" }, ">0.1");
+      this.tl.fromTo(el, 0.2, { opacity: "0", transform: "translateY( -100vh)" }, { opacity: "1", transform: "translateY( 0px)" }, "-0.1");
     });
   }
 

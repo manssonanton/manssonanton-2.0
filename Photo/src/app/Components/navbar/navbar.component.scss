@@ -1,4 +1,4 @@
-.main-navigation{
+.main-navigation {
   margin: 0 auto;
   width: 92%;
 }
@@ -70,8 +70,8 @@
 }
 #NavSpanName {
   font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.3em;
+  font-weight: 600;
+  letter-spacing: 0.4em;
   font-size: 1.3rem;
   color: #131313;
   text-decoration: none;
@@ -79,7 +79,7 @@
 
 #navMenuContainer {
   transform: translateZ(0); /*Fixing blur*/
-backface-visibility: hidden; /*Fixing blur*/
+  backface-visibility: hidden; /*Fixing blur*/
   background-color: #f8f9fa;
   // position: absolute;
   top: 0;
@@ -126,7 +126,7 @@ backface-visibility: hidden; /*Fixing blur*/
     margin-top: -0.5px;
     background: rgb(22, 22, 22);
   }
-  
+
   .activeCrossed:before {
     left: -5px;
   }
@@ -135,19 +135,19 @@ backface-visibility: hidden; /*Fixing blur*/
     background: rgb(17, 17, 17);
     transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
-  
+
   .activeCrossed:hover:before {
     background: rgb(20, 20, 20);
     width: 100%;
     transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
-  
+
   .activeCrossed:hover:after {
     background: transparent;
     width: 100%;
     transition: 0s;
   }
-  
+
   .NavLink {
     font-size: 1.4vh;
     text-decoration: none;
@@ -169,7 +169,7 @@ backface-visibility: hidden; /*Fixing blur*/
     padding: 2vh;
     margin-left: 4.5vh;
     transition: 0.4s ease-in-out;
-    .activeCrossed{
+    .activeCrossed {
       font-size: 2vh;
     }
   }
@@ -180,29 +180,34 @@ backface-visibility: hidden; /*Fixing blur*/
       width: 100%;
       transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
     }
-    
+
     .activeCrossed:after {
       background: transparent;
       width: 100%;
       transition: 0s;
     }
   }
-
+  .flex-container {
+    width: 92%;
+    margin: 0 auto;
+  }
   .NavMenuHamburgerContainer {
     position: absolute;
-    top: 2em;
-    right: 0;
-    display: flex;
-    margin-right: 5.5em;
-    justify-content: center;
+    padding-top: 2%;
+    top: 0;
+    width: 92%;
+    z-index: 99;
+    transition: 0.5s ease-in-out;
+    align-items: center;
   }
-
+  .NavMenuhamburger {
+    float: right;
+  }
   .NavMenuhamburger:hover {
     opacity: 0.6;
     cursor: pointer;
   }
 }
-
 
 #rightNav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
@@ -212,7 +217,6 @@ backface-visibility: hidden; /*Fixing blur*/
   right: 0;
   overflow: hidden; /* Disable horizontal scroll */
   z-index: 10000;
-
 }
 .arrow-txt {
   padding-left: 1em;
@@ -293,13 +297,11 @@ backface-visibility: hidden; /*Fixing blur*/
       margin: 1em;
     }
     .NavMenuHamburgerContainer {
-      top: 1.5em;
-      margin-right: 3em;
+      padding-top: 1rem;
+      width: 90%;
     }
   }
   .mediaSideNavLinks {
     visibility: hidden;
   }
-
 }
-

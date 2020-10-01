@@ -22,12 +22,12 @@ export class AnimationService {
   backInLeftAnimation(element: ElementRef){
     element.nativeElement.classList.add('animate__animated');
     element.nativeElement.classList.add('animate__backInLeft');
-    element.nativeElement.classList.add('animate__delay-0.4s');
+    element.nativeElement.classList.add('animate__delay-0.2s');
   }
   backInRightAnimation(element: ElementRef){
     element.nativeElement.classList.add('animate__animated');
         element.nativeElement.classList.add('animate__backInRight');
-        element.nativeElement.classList.add('animate__delay-0.4s');
+        element.nativeElement.classList.add('animate__delay-0.2s');
   }
   fadeInUpAnimation(element: ElementRef){
     element.nativeElement.classList.add('animate__animated');

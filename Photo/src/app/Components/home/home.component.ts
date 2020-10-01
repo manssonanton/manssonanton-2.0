@@ -49,7 +49,7 @@ export class HomeComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.checkScroll()
-    }, 200);
+    }, 100);
   }
 
   // onAppear() {

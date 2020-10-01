@@ -58,13 +58,9 @@ export class AboutComponent implements OnInit, AfterViewInit {
       const scrollPosition = window.pageYOffset;
       if (scrollPosition > componentPosition - window.innerHeight) {
         this.animationService.backInLeftAnimation(element);
-      }
-    });
-    this.elementArrayFromRight.forEach(element => {
-      const componentPosition = element.nativeElement.offsetTop
-      const scrollPosition = window.pageYOffset
-      if (scrollPosition > componentPosition - window.innerHeight) {
-        this.animationService.backInRightAnimation(element);
+        this.elementArrayFromRight.forEach(element => {
+            this.animationService.backInRightAnimation(element);
+        });
       }
     });
     this.elementArrayFade.forEach(element => {

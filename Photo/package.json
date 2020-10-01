@@ -24,6 +24,7 @@
     "gsap": "^3.3.1",
     "masonry-layout": "^4.2.2",
     "ngx-masonry": "^9.2.0",
+    "ngx-typed-js": "^2.0.2",
     "ngx-wow": "^2.0.1",
     "rxjs": "~6.5.4",
     "tslib": "^2.0.0",
