@@ -6,8 +6,8 @@
   </div>
   <div id="masonry">
     <ngx-masonry [options]="myOptions" >
-      <div ngxMasonryItem class="masonry-item" *ngFor="let item of viewPhotoUrls" >
-        <img (click)="openModal($event)" [src]=item.Url alt="...">
+      <div #fade ngxMasonryItem class="masonry-item" *ngFor="let item of viewPhotoUrls" >
+        <img   (click)="openModal($event)" [src]=item.Url alt="...">
       </div>
     </ngx-masonry>
     <div class="modal" (click)="closeModal()">

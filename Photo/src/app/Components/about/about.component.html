@@ -1,4 +1,37 @@
-<section class="about" @routeFadeAnimation>
+<section>
+    <div class="home-container">
+        <div  class="header-text ">
+            <h1 #nameHeader >ERIK ANTON MÅNSSON.</h1>
+            <h3 #nameSubHeader class="art-header-light">SOFTWARE ENGINEER<span class="bold-text"> & </span>HOBBY PHOTOGRAPHER.
+            </h3>
+            <div class="scrollDown">
+                <a #scrollClick (click)="scrollDown()"><svg class="animate__animated animate__pulse animate__infinite	infinite"
+                        width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill-rule="evenodd" clip-rule="evenodd">
+                        <path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div #aboutText class="about-container">
+            <span #aboutHeader class="about-header">03 About</span>
+            <p #articleText class="article-text">
+                Most of my photos are from my travels around the world. Sometimes I do go out around my home
+                town of Malmö
+                in Sweden and capture some of the nature we have here. <br>I don't upload that often to my social
+                medias but sometimes it happens so go and follow me, links below!
+                <br><br>
+            </p>
+        <div class="photo-grid">
+            <img #img1 src="../../assets/Pictures/About/DSC07449.jpg" alt="...">
+            <img #img2 src="../../assets/Pictures/About/20200105_092940.jpg" alt="...">
+            <img #img1 src="../../assets/Pictures/About/DSC06462.jpg" alt="...">
+            <img #img2 src="../../assets/Pictures/About/DSC09159.jpg" alt="...">
+        </div>
+    </div>
+    </div>
+</section>
+<!-- <section class="about" @routeFadeAnimation>
     <div class="flex-container">
         <article class="article">
             <div class="article-flex-img">
@@ -21,7 +54,7 @@
             </div>
         </article>
     </div>
-</section>
+</section> -->
 <!-- <div class="article-flex">
     <img class="flex-img" src="../../assets/Pictures/About/me.jpg" alt="Picture of me looking at something funny">
     <h1>WHO AM I?</h1>

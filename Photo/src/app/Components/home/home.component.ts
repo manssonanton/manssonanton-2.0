@@ -2,6 +2,7 @@ import { AfterViewChecked, AfterViewInit, Component, ElementRef, HostListener, O
 import { trigger, transition, useAnimation, style, animate, state } from '@angular/animations';
 import { scaleIn, scaleOut, loadIn } from '../../Animations/carousel.animations';
 import { PhotoService } from '../../Services/photo.service';
+import { AnimationService } from '../../Services/animation.service';
 
 const style1 = style({
   opacity: 1,
@@ -30,8 +31,8 @@ const style2 = style({
     ])
   ]
 })
-export class HomeComponent implements OnInit, AfterViewInit {
-  // public slides = [];
+export class HomeComponent implements AfterViewInit {
+
   @ViewChildren('centerImg,img1,img2') elementArrayFromLeft;
   @ViewChildren('img2') elementArrayFromRight;
   @ViewChildren('firstHeader,quote,centerImgText,quoteName,secHeader,scrollDown') elementArrayFade;
@@ -39,17 +40,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   firstHeaderState = 'hide';
   hasAppeared: boolean = false;
+
   constructor(
-    private photoService: PhotoService,
-    public el: ElementRef
+    private animationService: AnimationService,
+    // private photoService: PhotoService,
   ) { }
+
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.checkScroll()
-    }, 200);
-  }
-  ngOnInit(): void {
-    // this.getHomePhotos()
+    }, 100);
   }
 
   // onAppear() {
@@ -59,39 +59,31 @@ export class HomeComponent implements OnInit, AfterViewInit {
   // }
 
 
-
   toCenterImg() {
-    this.centerImg.nativeElement.scrollIntoView({behavior:"smooth",
-    block: 'center',
-    inline: 'center'});
+    this.animationService.scollToCenterElement(this.centerImg)
   }
+
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
     this.elementArrayFromLeft.forEach(element => {
-      const componentPosition = element.nativeElement.offsetTop
-      const scrollPosition = window.pageYOffset
+      const componentPosition = element.nativeElement.offsetTop;
+      const scrollPosition = window.pageYOffset;
       if (scrollPosition > componentPosition - window.innerHeight) {
-        element.nativeElement.classList.add('animate__animated');
-        element.nativeElement.classList.add('animate__backInLeft');
-        element.nativeElement.classList.add('animate__delay-0.4s');
+        this.animationService.backInLeftAnimation(element);
       }
     });
     this.elementArrayFromRight.forEach(element => {
       const componentPosition = element.nativeElement.offsetTop
       const scrollPosition = window.pageYOffset
       if (scrollPosition > componentPosition - window.innerHeight) {
-        element.nativeElement.classList.add('animate__animated');
-        element.nativeElement.classList.add('animate__backInRight');
-        element.nativeElement.classList.add('animate__delay-0.4s');
+        this.animationService.backInRightAnimation(element);
       }
     });
     this.elementArrayFade.forEach(element => {
       const componentPosition = element.nativeElement.offsetTop
       const scrollPosition = window.pageYOffset
       if (scrollPosition > componentPosition - window.innerHeight) {
-        element.nativeElement.classList.add('animate__animated');
-        element.nativeElement.classList.add('animate__fadeInUp');
-        element.nativeElement.classList.add('animate__delay-0.4s');
+        this.animationService.fadeInUpAnimation(element);
       }
     });
   }

@@ -1,7 +1,11 @@
 .portfolio{
-  padding-top: 5%;
+  padding-top: 6%;
+}
+.animate__animated.animate__fadeIn {
+  --animate-duration: 2s;
 }
 #masonry {
+  margin-top: 3%;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -113,7 +117,7 @@ img:hover {
   #masonry {
     margin-left: 0em;
     margin-right: 0em;
-    margin-top: 4em;
+    margin-top: 6.5em;
     width: 100%;
   }
   .masonry-item {

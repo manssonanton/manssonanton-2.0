@@ -11,7 +11,7 @@ import { FeaturesComponent } from '../app/Components/features/features.component
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full', data: {animation: 'Home'} },
   { path: 'about', component: AboutComponent, data: {animation: 'About'}} ,
-   { path: 'portfolio', component: PortfolioComponent, data: {animation: 'Contact'}},
+   { path: 'portfolio', component: PortfolioComponent, data: {animation: 'Portfolio'}},
    { path: 'features/kyoto', component: KyotoComponent },
    { path: 'features/osaka', component: OsakaComponent },
    { path: 'features', component: FeaturesComponent },
