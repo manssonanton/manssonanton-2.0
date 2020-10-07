@@ -62,9 +62,8 @@ export class NavbarComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
     const navBar = document.getElementById("topNav") as HTMLElement;
-    // const bottomRight = document.getElementById('bottom-right') as HTMLElement;
+    const bottomRight = document.getElementById('bottom-right') as HTMLElement;
     const currentScrollPos = window.pageYOffset;
-
 
     if (this.prevScrollpos > currentScrollPos) {
       navBar.style.transform = "translateY(0)";
@@ -72,14 +71,14 @@ export class NavbarComponent implements OnInit {
       navBar.style.transform = "translateY(-100%)";
     }
     this.prevScrollpos = currentScrollPos;
-    // if (currentScrollPos === 0) {
-    //   bottomRight.style.visibility = "Hidden";
-    //   bottomRight.style.opacity = "0";
-    // }
-    // else {
-    //   bottomRight.style.visibility = "Visible";
-    //   bottomRight.style.opacity = "1";
-    // }
+    if (currentScrollPos === 0) {
+      bottomRight.style.visibility = "Hidden";
+      bottomRight.style.opacity = "0";
+    }
+    else {
+      bottomRight.style.visibility = "Visible";
+      bottomRight.style.opacity = "1";
+    }
   }
 
 

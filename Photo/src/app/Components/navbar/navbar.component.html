@@ -2,14 +2,25 @@
     <nav id="topNav">
         <div id="navDivName">
             <a (click)="scrollToTop()" id="NavSpanName" routerLink="">
-                MANSSON°
+                ERIK ANTON MANSSON
             </a>
         </div>
         <div class="hamburgerContainer">
-            <div class="hamburger" (click)="toggleMenu()">
-                <div id="bar1"></div>
+            <ul class="top-nav-list">
+                <li><a routerLink="" routerLinkActive="is-active" 
+                        [routerLinkActiveOptions]="{ exact: true }">HOME</a>
+                </li>
+                <li>
+                    <a routerLink="portfolio" routerLinkActive="is-active" >PORTFOLIO</a>
+                </li>
+                <li>
+                    <a routerLink="about" routerLinkActive="is-active">ABOUT</a>
+                </li>
+            </ul>
+            <div class="hamburger" (click)="toggleMenu()">MENU
+                <!-- <div id="bar1"></div>
                 <div id="bar2"></div>
-                <div id="bar3"></div>
+                <div id="bar3"></div> -->
             </div>
         </div>
     </nav>
@@ -18,13 +29,18 @@
 <section class="right-navigation">
     <div id="rightNav">
         <div id="bottom-right" (click)="scrollToTop()">
-            <!-- <i><svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 17 10">
-                    <path class="cls-1" d="M6.22,8.75,3.37,5.89H17V4.12H3.37L6.22,1.25,5,0,0,5l5,5Z"></path>
-                </svg></i>
-            <span class="arrow-txt">TOP</span> -->
+            <span class="arrow-txt">TOP</span>
         </div>
 
     </div>
+</section>
+<section class="left-navigation">
+    <!-- <div id="rightNav">
+        <div id="bottom-right" (click)="scrollToTop()">
+            <span class="arrow-txt">TOP</span>
+        </div>
+
+    </div> -->
 </section>
 
 <div id="navMenuContainer" (click)="isToggled">

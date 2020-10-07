@@ -1,23 +1,23 @@
 <section>
     <div class="home-container">
-        <div class="header-text ">
-            <h1 #firstHeader>PHOTOGRAPHY
-                <h3>BY ANTON MÅNSSON.</h3>
-            </h1>
-
+        <div #firstHeader class="header-text ">
+            <h1 >Photo</h1>
+            <div>
+                <p>Some of my favorites photos which <br> I have captured over the<br> years and my travels.</p>
+            </div>
+            <!-- <div class="grid"> 
+                <img class="front-image-1" src="../../assets/Pictures/Home/Mountain2.jpg" alt="...">
+                <span class="porfolio-link"><span class="link-header">link / </span>Portfolio</span>
+                
+                <img class="front-image-2" src="../../assets/Pictures/Home/DSC07936.jpg" alt="...">
+            </div> -->
             <div class="scrollDown">
-                <a (click)="toCenterImg()">CLICK
-                    
-                </a>
-                <!-- <svg class="animate__animated animate__pulse animate__infinite	infinite"
-                        width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                        fill-rule="evenodd" clip-rule="evenodd">
-                        <path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z" />
-                    </svg> -->
-                <a (click)="toCenterImg()">OR SCROLL
-                </a>
+                <a (click)="toCenterImg()">click or scroll</a>
+                <a (click)="toCenterImg()"></a>
             </div>
         </div>
+
+
         <div class="center-image">
             <img #centerImg src="../../assets/Pictures/Home/DSC9999.jpg" alt="...">
             <p #centerImgText class="image-text">Kings trail outside the cabins of Singi.</p>

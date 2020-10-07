@@ -1,3 +1,29 @@
+@font-face {
+  font-family: "CustomFont";
+  src: url("../../../assets/Fonts/BebasNeue-Bold.ttf");
+}
+@font-face {
+  font-family: "bebas-regular";
+  src: url("../../../assets/Fonts/BebasNeue-book.otf");
+}
+
+@font-face {
+  font-family: "simpel";
+  src: url("../../../assets/Fonts/SIMPLIFICA\ Typeface.ttf");
+}
+@font-face {
+  font-family: "BeVietnam-ExtraBold";
+  src: url("../../../assets/Fonts/BeVietnam-Extrabold.ttf");
+}
+@font-face {
+  font-family: "BeVietnam-Light";
+  src: url("../../../assets/Fonts/BeVietnam-Light.ttf");
+}
+@font-face {
+  font-family: "BeVietnam-thin";
+  src: url("../../../assets/Fonts/BeVietnam-Thin.ttf");
+}
+
 .animate__animated.animate__backInLeft {
   --animate-duration: 1s;
 }
@@ -12,66 +38,49 @@ section {
   justify-content: center;
 }
 .home-container {
-  // margin-top: 5%;
+  // margin-top: 3%;
   display: grid;
-  width: 80%;
+  width: 100%;
   justify-content: center;
-  grid-template-rows: 100vh 2.5fr 2.3fr 2fr 1fr;
+  grid-template-rows: 80vh 3fr 2.3fr 2fr 1fr;
   align-items: center;
   align-self: center;
 
   .header-text {
-    align-items: center;
     margin: 0 auto;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    div{
+      transform-origin: right bottom;
+    transform: rotate(90deg)  translate(86%, 100%);
+    }
+    p {
+      font-family: "BeVietnam-Light", sans-serif;
+      font-size: clamp(0.8rem, 0.8vw, 80rem);
+      color: #333333;
+    }
     h1 {
-      -webkit-transform: translate3d(0, 0, 0) !important;
-      transform: translate3d(0, 0, 0) !important;
-      font-family: "Montserrat", sans-serif;
+      font-family: "BeVietnam-ExtraBold", sans-serif;
       text-align: center;
       font-weight: 200;
-      letter-spacing: 0.4em;
-      font-size: clamp(1.5rem, 6vw, 20rem);
-      color: #181717;
+      font-size: clamp(1.5rem, 12vw, 80rem);
+      color: #333333;
       margin: 0;
-      h3 {
-        font-family: "Montserrat", sans-serif;
-        text-align: center;
-        font-weight: 300;
-        letter-spacing: 0.2em;
-        font-size: clamp(2rem, 1.3vw, 3rem);
-        color: #181717;
-        margin: 1vh;
-      }
-    }
-    h2 {
-      font-family: "Montserrat", sans-serif;
-      text-align: center;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      font-size: clamp(1.5rem, 2vw, 3rem);
-      color: #181717;
-      margin: 1vh;
-      font-style: italic;
-    }
-    h3 {
-      font-family: "Montserrat", sans-serif;
-      text-align: center;
-      font-weight: 200;
-      letter-spacing: 0.2em;
-      font-size: clamp(1.3rem, 1.2vw, 3rem);
-      color: #181717;
-      margin: 1vh;
+      height: 11.5vw;
+      overflow: hidden;
     }
     .scrollDown {
-      transform: translateY(35vh);
+      transform: translateY(40vh);
+      width: 100%;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       a {
+        font-family: "BeVietnam-thin", sans-serif;
         font-weight: 400;
         letter-spacing: 0.1em;
-        font-size: clamp(1.5rem, 1vw, 3rem);
+        font-size: clamp(1rem, 0.8vw, 3rem);
         color: #181717;
         &:hover {
           cursor: pointer;
@@ -82,12 +91,70 @@ section {
         height: 30px;
       }
     }
+    .grid {
+      margin: 0 auto;
+      display: grid;
+      margin-top: 5vh;
+      width: 90%;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 2fr;
+      .front-image-1 {
+        grid-row: 1/3;
+        width: 90%;
+      }
+      .front-image-2 {
+        margin: 0 auto;
+        grid-row: 2/3;
+        height: 100%;
+      }
+      .porfolio-link {
+        grid-row: 1/2;
+        grid-column: 2/3;
+      }
+
+      .porfolio-link {
+        font-family: "CustomFont", sans-serif;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 700;
+        color: #2b2b2b;
+        margin: 5vw;
+        float: right;
+        font-size: clamp(2rem, 4vw, 20rem);
+        .link-header {
+          letter-spacing: 0.1em;
+          font-family: "bebas-regular", sans-serif;
+          font-size: clamp(2rem, 2vw, 20rem);
+        }
+      }
+    }
+
+    h2 {
+      font-family: "BeVietnam-thin", sans-serif;
+      text-align: center;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      font-size: clamp(1.5rem, 2vw, 3rem);
+      color: #181717;
+      margin: 1vh;
+      font-style: italic;
+    }
+    h3 {
+      font-family: "BeVietnam-thin", sans-serif;
+      text-align: center;
+      font-weight: 200;
+      letter-spacing: 0.2em;
+      font-size: clamp(1.3rem, 1.2vw, 3rem);
+      color: #181717;
+      margin: 1vh;
+    }
   }
   a {
-    font-family: "Montserrat", sans-serif;
+    font-family: "BeVietnam-thin", sans-serif;
     text-align: center;
-    font-weight: 600;
-    font-size: 2.3vw;
+    font-size: 1.5vw;
     color: #181717;
     margin: 0;
     text-decoration: none;
