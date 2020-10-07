@@ -7,8 +7,9 @@ html{
   font-size: 62.5%;
 }
 body{
-  color: #e7e7e7;
+  color: #e7e7e7c7;
   /* background-color: #14171a; */
+  /* overflow: hidden; */
   background-color: #0e1113;
   font-family: 'IBM Plex Mono', monospace;
 }
@@ -18,3 +19,8 @@ body{
 h1{
   font-size: 7rem
 } */
+
+@font-face {
+  font-family: "Digra";
+  src: url("./Assets/Dirga.ttf?#iefix") format('truetype');
+}

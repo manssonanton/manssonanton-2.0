@@ -15,10 +15,10 @@ function App() {
           <Home />
         </div>
         <div className="c2">
-          <About />
+          <Projects />
         </div>
         <div className="c3">
-          <Projects />
+          <About />
         </div>
         <div className="c4">
           <Contact />

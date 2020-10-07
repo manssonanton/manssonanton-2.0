@@ -20,15 +20,9 @@
 .about-card {
     background-color: #1b1f23;
     padding: 4rem;
-    /* -webkit-box-shadow: -15px -10px 2px 0px #c8f3ea21; 
-    -moz-box-shadow: -15px -10px 2px 0px #c8f3ea21; 
-    box-shadow: -15px -10px 2px 0px #c8f3ea21;  */
 }
 
 .about-pic {
-    /* -webkit-box-shadow: -15px -10px 2px 0px #c8f3ea21; 
-    -moz-box-shadow: -15px -10px 2px 0px #c8f3ea21; 
-    box-shadow: -15px -10px 2px 0px #c8f3ea21;  */
     width: 100%;
     justify-content: center;
     align-self: center;
